@@ -1,0 +1,67 @@
+/*
+常用 渐变
+ * */
+
+//从左到右的双色渐变
+.color-gradient-left-right(@cl-bg:#12e2f9,@cl-to:#24fda1){
+    @bg: @cl-bg;//基础颜色
+    @to: @cl-to;//要渐变到的颜色
+    background: @bg;
+    background: -moz-linear-gradient(left, @bg, @to);
+    background: -webkit-gradient(linear, 30% 50%, 100% 50%, from(@bg), to(@to));
+    background: -o-linear-gradient(left, @bg, @to); 
+}
+.color-gradient-top-bottom(@cl-bg:#aa00fb,@cl-to:#8202ef,@start:50% 0%,@end:50% 100%){
+    @bg: @cl-bg;//基础颜色
+    @to: @cl-to;//要渐变到的颜色
+    background: @bg;
+    background: -moz-linear-gradient(left, @bg, @to);
+    background: -webkit-gradient(linear, @start, @end, from(@bg), to(@to));
+    background: -o-linear-gradient(left, @bg, @to); 
+}
+/*
+ 边框 阴影
+ * */
+.box-shadow(@boxshadow){
+    -webkit-box-shadow: @boxshadow;
+    -moz-box-shadow: @boxshadow;
+    box-shadow: @boxshadow;
+}
+/*
+ 圆角
+ * */
+.border-radius(@d){
+    -webkit-border-radius: @d;
+    -moz-border-radius: @d;
+    -ms-border-radius: @d;
+    border-radius: @d;
+}
+.border-radius-t(@d){
+    .border-radius-tl(@d);
+    .border-radius-tr(@d);
+}
+.border-radius-b(@d){
+    .border-radius-bl(@d);
+    .border-radius-br(@d);
+}
+.border-radius-tl(@d) {
+    -webkit-border-top-left-radius: @d;
+    -moz-border-top-left-radius: @d;
+    border-top-left-radius: @d;
+}
+.border-radius-tr(@d) {
+    -webkit-border-top-right-radius: @d;
+    -moz-border-top-right-radius: @d;
+    border-top-right-radius: @d;
+}
+
+.border-radius-bl(@d) {    
+    -webkit-border-bottom-left-radius: @d;
+    -moz-border-bottom-left-radius: @d;
+    border-bottom-left-radius: @d;
+}
+.border-radius-br(@d) {    
+    -webkit-border-bottom-right-radius: @d;
+    -moz-border-bottom-right-radius: @d;
+    border-bottom-right-radius: @d;
+}
