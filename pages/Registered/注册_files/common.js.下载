@@ -1,0 +1,55 @@
+/**
+ * Created by yuzhifei on 15/8/8.
+ */
+
+var jsCommon={
+    setCookie: function (name, value) {
+        var Days = 30;
+        var exp = new Date();
+        exp.setTime(exp.getTime() + Days * 24 * 60 * 60 * 1000);
+        document.cookie = name + "=" + escape(value) + ";expires=" + exp.toGMTString();
+    },
+    getCookie: function (name) //读取cookies
+    {
+        var arr, reg = new RegExp('(^| )' + name + '=([^;]*)(;|$)');
+        if (arr = document.cookie.match(reg)) return unescape(arr[2]);
+        else return null;
+    },
+    getOS: function () {
+        var ua = navigator.userAgent,
+            platform = navigator.platform,
+            wkmatch = ua.match(/AppleWebKit\/([0-9]+)/),
+            wkversion = !!wkmatch && wkmatch[1],
+            os = null;
+
+        if (platform.indexOf("iPhone") > -1 || platform.indexOf("iPad") > -1 || platform.indexOf("iPod") > -1) {
+            os = "ios";
+        } else if (ua.indexOf("Android") > -1) {
+            os = "android";
+        } else {
+            os = 'other';
+        }
+        return os;
+    },
+    onResize: function (fn, key) {
+        var os=this.getOS()
+            ,name = this.eventName.orientationchange;
+        key && (name = name + '.' + key);
+        $(window).off(name).on(name, function () {
+            //兼容安卓手机change事件不能立即获取到当前高宽
+            if (os== 'android'){
+                setTimeout(fn, 300);
+            } else {
+                fn();
+            }
+        });
+    },
+    eventName: {
+        orientationchange: function () {
+            return ("onorientationchange" in window ? "orientationchange" : "resize");
+        } (),
+        tap: function () {
+            return ("ontouchend" in window ? "touchend" : "click");
+        } ()
+    }
+}

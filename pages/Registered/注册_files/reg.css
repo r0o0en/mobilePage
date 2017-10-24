@@ -1,0 +1,31 @@
+.g-wrap{ width: 6.4rem; margin-left: auto; margin-right: auto;}
+
+.m-reg{ padding: 3.0rem 0 .2rem; background: url("../img/bg.png") no-repeat; background-size: 100%;}
+
+.m-reg .form{ margin: 0 .64rem;}
+.m-reg .item{ position: relative; margin-bottom:.12rem; background: rgba(211, 215, 209, 0.38); overflow:hidden; border-radius:.08rem;}
+.m-reg .item input {background-color: rgba(0, 0, 0, 0)}
+.m-reg .txt, .m-reg .btn{ text-align:center; border-radius:.08rem; width:100%; border: none;}
+
+.m-reg .type{ height:.82rem; line-height: .82rem; color:#362C51; padding-left: 1.58rem;}
+.m-reg .type .u_checkbox{ margin-right: .4rem;}
+.m-reg .type .u_checkbox .ico{ margin: .31rem .05rem 0 0; border-color: #362C51;}
+
+.m-reg .txt{ width: 100%; box-sizing:border-box; height:.82rem; line-height:.4rem; padding:.21rem 0 .21rem 1.58rem; background: rgba(211, 215, 209, 0.38); text-align: left; font-size:.28rem;}
+.m-reg .txt::-webkit-input-placeholder{color:#362C51;}
+
+.c-red{color:#362C51;}
+
+.m-reg .lab{ position: absolute; left: 0; top:0; width: 1.58rem; height:.82rem; line-height: .82rem; box-sizing: border-box; padding-left: .26rem; color: #FEE300; font-size: .28rem;}
+
+.m-reg .get{ position: absolute; right: .15rem; top:.2rem; width: .8rem; height: .4rem; line-height: .4rem; text-align: center; border: 1px solid #FEE300; color: #FEE300; border-radius: .3rem;}
+
+.m-reg .reg_but{ height:.7rem; line-height:.7rem; background: #ed3044; color: #ffffff; font-size: .3rem; margin-bottom: .3rem;}
+.m-reg .down_but{ height:.7rem; line-height:.7rem; background:#FEE300; color: #362c51; font-size: .3rem; margin-bottom: 0;}
+
+.u_checkbox input{ display:none;}
+.u_checkbox input:checked ~ .ico{background:url(../img/ico.png) no-repeat center;background-size:100%;}
+.u_checkbox .ico{display:inline-block; overflow:hidden; width:.2rem; height:.2rem; border:1px solid #ccc; border-radius: 2px;}
+
+.m-reg .rule{ overflow: hidden; color: #fff; padding: .08rem 0 .25rem;}
+.m-reg .rule .ico{ margin-right: 5px;}

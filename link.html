@@ -19,8 +19,52 @@
 		<meta http-equiv="Pragma" contect="no-cache">
 		
 		<link rel="stylesheet" type="text/css" href="css/init.css"/>
+		<style type="text/css">
+			a{
+				font-size: 0.3rem;
+				display: inline-block;
+				padding: 0.2rem;
+				margin: 0.1rem 0.1rem ;
+				background-color: #3399FF;
+				color: white;
+				-webkit-border-radius: 4px;
+				-moz-border-radius: 4px;
+				border-radius: 4px;
+				}
+			a:active{
+				background-color: #3399FF;
+				color: #fff;
+			}
+		</style>
 	</head>
 	<body>
+		<a href="javascript:void(0);">呵呵</a>
 		<a href="pages/elevent/index.html">双11详情页</a>
+		<a href="pages/Registered/注册.htm">用户注册（老版）</a>
+		<script src="js/init.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+//			onresize = function (e) {
+//				console.log(1,e);
+//			}
+//			onresize = function () {
+//				console.log(2);
+//			}
+			var abc = function (e) {
+				console.log(3);
+			}
+			addResize(function onresize1(e) {
+				console.log(1);
+			});
+//			addResize(function(e) {
+//				console.log(2);
+//			});
+//			addResize(function(e) {
+//				console.log(4);
+//			});
+//			addResize(function(e) {
+//				console.log(5);
+//			});
+			addResize(abc);
+		</script>
 	</body>
 </html>
