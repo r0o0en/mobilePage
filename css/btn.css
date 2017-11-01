@@ -1,0 +1,109 @@
+/*
+   注意：
+    1、所有font-size/line-height/width/height均以rem做单位
+    2、.btn 必须为 inline-block / block 
+  
+   使用：
+    1、 .btn 默认有圆角、有边框 有背景  @color-default 和 @color-active 为border和font颜色 @color为无效属性
+    2、 .btn-no-bd 不显示边框 
+    3、 .btn-no-bg 不显示背景
+    
+  定义新的颜色：
+    .btn-blue{
+        .defined-btn(@color-default,@color-active,@color:white);        
+    }
+  定义新的大小：
+ * */
+.btn {
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  padding: 0 0.15rem;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -khtml-user-select: none;
+  /*早期浏览器*/
+  user-select: none;
+}
+.btn.disabled,
+.btn[disabled] {
+  background-color: #ccc;
+  color: #999;
+}
+.btn[disabled='false'] {
+  cursor: pointer;
+}
+.btn:active {
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  -moz-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+.btn-no-bg {
+  border-width: 1px;
+  border-style: solid;
+}
+.btn-no-bg,
+.btn-no-bg:active {
+  background: none;
+}
+.btn-no-bd {
+  border: none;
+}
+.btn {
+  font-size: 0.24rem;
+  height: auto;
+  line-height: 1.6;
+  padding: 0.06rem 0.2rem;
+}
+.btn.btn-no-bd {
+  line-height: 1.6;
+}
+.btn {
+  color: #333;
+  border-color: #ccc;
+  background-color: transparent;
+}
+.btn:active {
+  color: #333;
+}
+.btn:active {
+  border-color: #adadad;
+  background-color: #e6e6e6;
+}
+.btn-blue {
+  color: white;
+  border-color: #2e6da4;
+  background-color: #337ab7;
+}
+.btn-blue:active {
+  color: white;
+}
+.btn-blue:active {
+  border-color: #23537c;
+  background-color: #285f8f;
+}
+.btn-green {
+  color: white;
+  border-color: #019739;
+  background-color: #019739;
+}
+.btn-green:active {
+  color: white;
+}
+.btn-green:active {
+  border-color: #016426;
+  background-color: #016426;
+}
+/*
+    函数声明
+ * */
+/*
+ darken(color,%);
+ 减少一个颜色的明度在奥软的颜色空间的绝对数量（变黑）。
+ hsla 
+ 通过色相 (hue)，饱和度 (saturation)，亮度 (lightness)，以及 alpha 四种值 (HSLA) 创建透明的颜色对象。
+ * */

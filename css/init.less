@@ -1,3 +1,10 @@
+@import 'defined.less';
+//@import 'btn.less';
+  
+/*******************************
+    -------[=初始化]-------
+********************************/
+
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -10,28 +17,55 @@ body {
     padding: 0;
     width: 100%;
     overflow-x: hidden;
+    max-width: 750px;
+    margin: 0 auto;
 }
 
 body{
     font-size: 0.12rem;
 }
+ul,ol,figure,figcaption{padding: 0;margin:0;}
 ul,ol{list-style: none;}
 table{border-collapse: collapse;}
 td,th{border: 1px solid #ccc;}
+em { font-style:normal; }
+input, button, select, textarea ,a{ outline:none; }
 a{
     text-decoration: none;
+}
+a,.btn{
     .no-dbclick-select;
+    &,&:focus,&:hover,&:active{
+        outline: none;
+    }
 }
 img {
+    border: none;
     width: auto;
     max-width: 100%;
 }
-
+strike{color: #ccc;}
+mark{background-color: transparent;}
 .img-all {
     display: block;
     width: 100%;
 }
+/*
+ 浮动、清楚浮动
+ */
+.clearfix { 
+    *zoom:1;
+    &:after {content: "."; display: block; height:0;clear:both; visibility: hidden;}
+}
+.fl-l{float: left;}
+.fl-r{float: right;}
+.clear-bo{clear: both;}
+/*
+ 本地环境
+ * */
+//悬浮刷新按钮
 .flex-refresh{
+    display: none;
     position: fixed;right: 5%;bottom: 5%;z-index: 99;
 //  width: 0.6rem;height: 0.6rem;
     text-align: center;line-height: 1.2;letter-spacing: 2px;
@@ -83,7 +117,24 @@ img {
 .text-cenner {
     text-align: center;
 }
-
+/*
+ 背景
+ * */
+.bg-white{
+    background-color: white;
+}
+.bg-ccc{
+    background-color: #ccc;
+}
+.bg-eee{
+    background-color: #eee;
+}
+/*
+ 字体颜色
+ * */
+.cl-white{color: white;}
+.cl-999{color: #999;}
+.cl-red{color: #FF0000;}
 /*
  下划线、模拟下划线
  * */
@@ -93,3 +144,58 @@ img {
 .underline-red{
     border-bottom: 1px solid red;
 }
+
+/*
+ flex 弹性布局
+ * */
+.flex{
+    .flex();
+}
+.flex-number(1);
+.flex-number(2);
+.flex-number(3);
+.flex-number(4);
+
+/*
+预定义padding、margin
+* */
+.defined-padding(@val,@unit:rem){
+    //@rem:escape("@{val}@{unit}");
+    .padding-@{val}{
+        padding: @val;
+    }
+    .padding-l-@{val}{
+        padding-right: @val;
+    }
+    .padding-r-@{val}{
+        padding-right: @val;
+    }
+    .padding-t-@{val}{
+        padding-top: @val;
+    }
+    .padding-b-@{val}{
+        padding-bottom: @val;
+    }
+}
+.defined-margin(@val,@unit:rem){
+    //@rem:escape("@{val}@{unit}");
+    .margin-@{val}{
+        margin: @val;
+    }
+    .margin-l-@{val}{
+        margin-right: @val;
+    }
+    .margin-r-@{val}{
+        margin-right: @val;
+    }
+    .margin-t-@{val}{
+        margin-top: @val;
+    }
+    .margin-b-@{val}{
+        margin-bottom: @val;
+    }
+}
+.pd-rem-d2{padding: 0.2rem;}
+.pd-rem-d3{padding: 0.3rem;}
+.pd-rem-d4{padding: 0.4rem;}
+

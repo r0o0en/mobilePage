@@ -1,0 +1,111 @@
+ @import '../../../css/defined.less';
+ @import '../../../css/btn.less';
+ .goods-wp{
+     padding: 0.3rem;
+ }
+ .goods-list{
+//   ul&>li,.goods-li{
+     &>li{
+         background-color: white;
+         padding: 0.2rem;
+         margin-bottom: 0.2rem;
+        .flex();
+        &>figure{
+            width: 2rem;
+//          height: 2.4rem;
+            figcaption{
+                display: none;
+            }
+            img{
+                display: block;
+                width: 100%;
+            }
+        }
+        &>div{
+            font-size: 0.20rem;
+            .flex-int();
+            header{
+                font-size: 0.26rem;
+                min-height:  0.26rem * 1.4 * 1.6;
+                .text-line-hide;
+            }
+            .info{
+                color: #999;
+            }
+            p{
+                margin: 0.1rem auto ;
+                //margin: 0.1rem auto 0;
+            }
+            .buy-row{
+                big{
+                    font-size:0.3rem; 
+                }
+                .btn{
+                    .border-radius(4px);
+//                  .defined-btn-size(0.3rem,0.1rem 0.2rem,1.8);
+                }
+                -webkit-align-items: flex-end;
+                align-items: flex-end;
+            }
+            &>*:last-child{
+                margin-bottom: 0 ;
+//              margin: 0 auto;
+            }
+        }
+     }
+ }
+@media only screen and (max-width: 320px) {
+    .goods-list > li > div p{
+        margin: 0.05rem auto;
+    }
+}
+ /*
+    粮票补贴、粮票抵扣 标签
+    <span class="stamps-subsidies fl-l"><mark class="text">补贴粮票</mark><mark class="number">100%</mark></span>
+  */
+.stamps-subsidies{
+    .scale(0.8);
+    .transform-origin(0 100%); 
+    float: left;
+    //<p class="stamps-subsidies fl-l"><span class="text">补贴粮票</span><span class="number">100%</span></p>
+    @border-color:#009c3b;
+//  @border-color:#ff7b00;
+    @border-radius-width:4px;
+    @hei:16px;
+    @bd-w:1px;
+    font-size: 0;
+    height:@hei;
+    position: relative;
+    padding-left: 60px;
+    mark{
+        text-align: center;
+        border-width: @bd-w;
+        //font-size: 12px;
+        font-size: 12px;
+        line-height: @hei - @bd-w*2;
+        height: inherit;
+        border-color:@border-color;
+        &.text{
+            text-align: center;
+            display:block;width: 60px;
+            position: absolute;left: 0;top: 0;
+            border-style: solid;
+            color: white;
+            background-color: @border-color;
+            .border-radius-tl(@border-radius-width);
+            .border-radius-bl(@border-radius-width);
+        }
+        &.number{
+            //max-width: 40px;
+            color: @border-color;       
+            text-align: center;
+            padding: 0 4px;
+            display: block;
+            border-left-width: 0px;
+            border-style:dashed;
+            .border-radius-tr(@border-radius-width);
+            .border-radius-br(@border-radius-width);
+        }
+    }
+    
+}

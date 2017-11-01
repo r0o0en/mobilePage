@@ -1,120 +1,29 @@
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-html,
-body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  overflow-x: hidden;
-}
-body {
-  font-size: 0.12rem;
-}
-ul,
-ol {
-  list-style: none;
-}
-table {
-  border-collapse: collapse;
-}
-td,
-th {
-  border: 1px solid #ccc;
-}
-a {
-  text-decoration: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -khtml-user-select: none;
-  /*早期浏览器*/
-  user-select: none;
-}
-img {
-  width: auto;
-  max-width: 100%;
-}
-.img-all {
-  display: block;
-  width: 100%;
-}
-.flex-refresh {
-  position: fixed;
-  right: 5%;
-  bottom: 5%;
-  z-index: 99;
-  text-align: center;
-  line-height: 1.2;
-  letter-spacing: 2px;
-  background-color: #0066FF;
-  color: white;
-  font-size: 0.25rem;
-  padding: 0.1rem;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-}
 /*
- 平滑滚动
+ 浮动、清楚浮动
+ */
+/*
+ flex  弹性布局
  * */
-.smooth-roll {
-  -webkit-overflow-scrolling: touch;
-}
+/*----- 可见度 -----*/
 /*
- 双击选中
- * */
-.no-dbclick-select {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -khtml-user-select: none;
-  /*早期浏览器*/
-  user-select: none;
-}
-/*
- 显示、隐藏
- * */
-.show,
-.block {
-  display: block;
-}
-.show-inline,
-.inline {
-  display: inline;
-}
-.show-inline-block,
-.inline-block {
-  display: inline-block;
-}
-.hide {
-  display: none;
-}
-/*
- 文本排列
- * */
-.text-cenner {
-  text-align: center;
-}
-/*
- 下划线、模拟下划线
- * */
-.underline {
-  text-decoration: underline;
-}
-.underline-red {
-  border-bottom: 1px solid red;
-}
-/*
-常用 渐变
+ 溢出 隐藏
  * */
 /*
  边框 阴影
  * */
 /*
  圆角
+ * */
+/*
+ 过渡时间
+ transform  过渡
+ duration  持续、持续时间
+ delay  延期、延时
+ origin 原点、起源
+ * */
+/*----- 2D转换 -----*/
+/*
+常用 渐变
  * */
 html,
 body {
@@ -228,9 +137,16 @@ article {
 }
 .footer {
   padding: 0.2rem;
-  text-align: center;
   color: white;
   font-size: 0.24rem;
   width: 86%;
   margin: 0 auto;
+}
+.footer p {
+  margin-bottom: 0;
+}
+.footer ul {
+  list-style-type: decimal;
+  list-style-position: inside;
+  line-height: 2;
 }
