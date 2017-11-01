@@ -38,6 +38,14 @@ a,.btn{
     &,&:focus,&:hover,&:active{
         outline: none;
     }
+    //移动端让背景框不显示
+    &,&:active{
+        -webkit-tap-highlight-color:rgba(0, 0, 0, 0);  
+        -moz-tap-highlight-color:rgba(0, 0, 0, 0);  
+        -ms-tap-highlight-color:rgba(0, 0, 0, 0);  
+        -o-tap-highlight-color:rgba(0, 0, 0, 0);  
+        tap-highlight-color:rgba(0, 0, 0, 0);  
+    }
 }
 img {
     border: none;

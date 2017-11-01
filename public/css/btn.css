@@ -26,8 +26,15 @@
   -moz-user-select: none;
   -ms-user-select: none;
   -khtml-user-select: none;
-  /*早期浏览器*/
   user-select: none;
+}
+.btn,
+.btn:active {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -moz-tap-highlight-color: rgba(0, 0, 0, 0);
+  -ms-tap-highlight-color: rgba(0, 0, 0, 0);
+  -o-tap-highlight-color: rgba(0, 0, 0, 0);
+  tap-highlight-color: rgba(0, 0, 0, 0);
 }
 .btn.disabled,
 .btn[disabled] {
