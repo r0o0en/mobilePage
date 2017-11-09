@@ -1,3 +1,272 @@
+/*******************************
+    -------[=初始化]-------
+********************************/
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  max-width: 750px;
+  margin: 0 auto;
+}
+body {
+  font-size: 0.26rem;
+}
+ul,
+ol,
+figure,
+figcaption {
+  padding: 0;
+  margin: 0;
+}
+ul,
+ol {
+  list-style: none;
+}
+table {
+  border-collapse: collapse;
+}
+td,
+th {
+  border: 1px solid #ccc;
+}
+em {
+  font-style: normal;
+}
+address {
+  font-style: normal;
+}
+input,
+button,
+select,
+textarea,
+a {
+  outline: none;
+}
+a {
+  text-decoration: none;
+}
+a,
+.btn {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -khtml-user-select: none;
+  /*早期浏览器*/
+  user-select: none;
+}
+a,
+.btn,
+a:focus,
+.btn:focus,
+a:hover,
+.btn:hover,
+a:active,
+.btn:active {
+  outline: none;
+}
+a,
+.btn,
+a:active,
+.btn:active {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -moz-tap-highlight-color: rgba(0, 0, 0, 0);
+  -ms-tap-highlight-color: rgba(0, 0, 0, 0);
+  -o-tap-highlight-color: rgba(0, 0, 0, 0);
+  tap-highlight-color: rgba(0, 0, 0, 0);
+}
+strike {
+  color: #ccc;
+}
+mark {
+  background-color: transparent;
+}
+/*
+ img
+ * */
+img {
+  border: none;
+  width: auto;
+  max-width: 100%;
+}
+.img-all {
+  display: block;
+  width: 100%;
+}
+/*
+ bg
+ * */
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+/*
+ 浮动、清楚浮动
+ */
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.fl-l {
+  float: left;
+}
+.fl-r {
+  float: right;
+}
+.clear-bo {
+  clear: both;
+}
+/*
+ 本地环境
+ * */
+.flex-refresh {
+  display: none;
+  position: fixed;
+  right: 5%;
+  bottom: 5%;
+  z-index: 99;
+  text-align: center;
+  line-height: 1.2;
+  letter-spacing: 2px;
+  background-color: #0066FF;
+  color: white;
+  font-size: 0.25rem;
+  padding: 0.1rem;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+/*
+ 平滑滚动
+ * */
+.smooth-roll {
+  -webkit-overflow-scrolling: touch;
+}
+/*
+ 双击选中
+ * */
+.no-dbclick-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -khtml-user-select: none;
+  /*早期浏览器*/
+  user-select: none;
+}
+/*
+ 显示、隐藏
+ * */
+.show,
+.block {
+  display: block;
+}
+.show-inline,
+.inline {
+  display: inline;
+}
+.show-inline-block,
+.inline-block {
+  display: inline-block;
+}
+.hide {
+  display: none;
+}
+/*
+ 文本排列
+ * */
+.text-cenner {
+  text-align: center;
+}
+/*
+ 背景
+ * */
+.bg-white {
+  background-color: white;
+}
+.bg-ccc {
+  background-color: #ccc;
+}
+.bg-eee {
+  background-color: #eee;
+}
+/*
+ 字体颜色
+ * */
+.cl-white {
+  color: white;
+}
+.cl-999 {
+  color: #999;
+}
+.cl-red {
+  color: #FF0000;
+}
+/*
+ 下划线、模拟下划线
+ * */
+.underline {
+  text-decoration: underline;
+}
+.underline-red {
+  border-bottom: 1px solid red;
+}
+/*
+ flex 弹性布局
+ * */
+.flex {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+}
+.flex-1 {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  flex: 1;
+}
+.flex-2 {
+  -webkit-box-flex: 2;
+  -moz-box-flex: 2;
+  flex: 2;
+}
+.flex-3 {
+  -webkit-box-flex: 3;
+  -moz-box-flex: 3;
+  flex: 3;
+}
+.flex-4 {
+  -webkit-box-flex: 4;
+  -moz-box-flex: 4;
+  flex: 4;
+}
+/*
+预定义padding、margin
+* */
+.pd-rem-d2 {
+  padding: 0.2rem;
+}
+.pd-rem-d3 {
+  padding: 0.3rem;
+}
+.pd-rem-d4 {
+  padding: 0.4rem;
+}
 /*
  浮动、清楚浮动
  */
@@ -25,6 +294,122 @@
 /*
 常用 渐变
  * */
+/*
+   注意：
+    1、所有font-size/line-height/width/height均以rem做单位
+    2、.btn 必须为 inline-block / block 
+  
+   使用：
+    1、 .btn 默认有圆角、有边框 有背景  @color-default 和 @color-active 为border和font颜色 @color为无效属性
+    2、 .btn-no-bd 不显示边框 
+    3、 .btn-no-bg 不显示背景
+    
+  定义新的颜色：
+    .btn-blue{
+        .defined-btn(@color-default,@color-active,@color:white);        
+    }
+  定义新的大小：
+ * */
+.btn {
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  padding: 0 0.15rem;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+}
+.btn,
+.btn:active {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -moz-tap-highlight-color: rgba(0, 0, 0, 0);
+  -ms-tap-highlight-color: rgba(0, 0, 0, 0);
+  -o-tap-highlight-color: rgba(0, 0, 0, 0);
+  tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.btn.disabled,
+.btn[disabled] {
+  background-color: #ccc;
+  color: #999;
+}
+.btn[disabled='false'] {
+  cursor: pointer;
+}
+.btn:active {
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  -moz-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+.btn-no-bg {
+  border-width: 1px;
+  border-style: solid;
+}
+.btn-no-bg,
+.btn-no-bg:active {
+  background: none;
+}
+.btn-no-bd {
+  border: none;
+}
+.btn {
+  font-size: 0.24rem;
+  height: auto;
+  line-height: 1.6;
+  padding: 0.06rem 0.2rem;
+}
+.btn.btn-no-bd {
+  line-height: 1.6;
+}
+.btn {
+  color: #333;
+  border-color: #ccc;
+  background-color: transparent;
+}
+.btn:active {
+  color: #333;
+}
+.btn:active {
+  border-color: #adadad;
+  background-color: #e6e6e6;
+}
+.btn-blue {
+  color: white;
+  border-color: #2e6da4;
+  background-color: #337ab7;
+}
+.btn-blue:active {
+  color: white;
+}
+.btn-blue:active {
+  border-color: #23537c;
+  background-color: #285f8f;
+}
+.btn-green {
+  color: white;
+  border-color: #019739;
+  background-color: #019739;
+}
+.btn-green:active {
+  color: white;
+}
+.btn-green:active {
+  border-color: #016426;
+  background-color: #016426;
+}
+/*
+    函数声明
+ * */
+/*
+ darken(color,%);
+ 减少一个颜色的明度在奥软的颜色空间的绝对数量（变黑）。
+ hsla 
+ 通过色相 (hue)，饱和度 (saturation)，亮度 (lightness)，以及 alpha 四种值 (HSLA) 创建透明的颜色对象。
+ * */
 .goods-wp {
   padding: 0.3rem;
 }
@@ -38,6 +423,7 @@
 }
 .goods-list > li > figure {
   width: 2rem;
+  margin-right: 0.2rem;
 }
 .goods-list > li > figure figcaption {
   display: none;

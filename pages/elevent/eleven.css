@@ -27,23 +27,15 @@
  * */
 html,
 body {
-  height: 100%;
   background-color: white;
 }
-body {
-  overflow-y: auto;
-}
 article {
-  background-image: url(eleven_bg2.png);
-  background-repeat: repeat-y;
-  background-size: 100% auto;
   background-color: #fe1451;
 }
 article {
   padding-bottom: 0.2rem;
 }
 .header {
-  margin-bottom: -22%;
   position: relative;
 }
 .header .header-bg {
@@ -55,6 +47,7 @@ article {
   height: auto;
   position: absolute;
   top: 47%;
+  top: 3.2rem;
   left: 0%;
   z-index: 2;
 }
@@ -63,6 +56,7 @@ article {
   position: absolute;
   top: 50%;
   left: 0;
+  margin: 0 auto;
   z-index: 3;
 }
 .header .active-time span {
@@ -86,6 +80,9 @@ article {
 .header .active-time span time {
   line-height: 2;
 }
+.header + .section {
+  margin-top: -1.9rem;
+}
 .section {
   position: relative;
   z-index: 1;
@@ -108,23 +105,10 @@ article {
 .section .embellish-one {
   border: 0.02rem solid #a706f5;
   padding: 0.05rem 0.08rem;
-  background: #aa00fb;
-  background: -moz-linear-gradient(left, #aa00fb, #1d05e6);
-  background: -webkit-gradient(linear, 50% 0, 50% 100%, from(#aa00fb), to(#1d05e6));
-  background: -o-linear-gradient(left, #aa00fb, #1d05e6);
-  -webkit-box-shadow: inset 0 0.05rem 0.05rem #7800ff;
-  -moz-box-shadow: inset 0 0.05rem 0.05rem #7800ff;
-  box-shadow: inset 0 0.05rem 0.05rem #7800ff;
 }
 .section .embellish-two {
   border: 0.03rem solid #f1e2fd;
-  background: #aa00fc;
-  background: -moz-linear-gradient(left, #aa00fc, #8108ed);
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, from(#aa00fc), to(#8108ed));
-  background: -o-linear-gradient(left, #aa00fc, #8108ed);
-  -webkit-box-shadow: inset 0 0 0.04rem #4f0beb;
-  -moz-box-shadow: inset 0 0 0.04rem #4f0beb;
-  box-shadow: inset 0 0 0.04rem #4f0beb;
+  background-color: #a100f8;
   padding: 0.2rem 0.4rem;
 }
 .section header {

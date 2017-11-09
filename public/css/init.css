@@ -43,7 +43,7 @@ body {
   margin: 0 auto;
 }
 body {
-  font-size: 0.12rem;
+  font-size: 0.26rem;
 }
 ul,
 ol,
@@ -64,6 +64,9 @@ th {
   border: 1px solid #ccc;
 }
 em {
+  font-style: normal;
+}
+address {
   font-style: normal;
 }
 input,
@@ -105,20 +108,35 @@ a:active,
   -o-tap-highlight-color: rgba(0, 0, 0, 0);
   tap-highlight-color: rgba(0, 0, 0, 0);
 }
-img {
-  border: none;
-  width: auto;
-  max-width: 100%;
-}
 strike {
   color: #ccc;
 }
 mark {
   background-color: transparent;
 }
+/*
+ img
+ * */
+img {
+  border: none;
+  width: auto;
+  max-width: 100%;
+}
 .img-all {
   display: block;
   width: 100%;
+}
+/*
+ bg
+ * */
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 /*
  浮动、清楚浮动
