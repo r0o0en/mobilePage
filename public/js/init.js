@@ -1,5 +1,11 @@
-;
-(function(doc, win) {
+//如果是测试连接，显示刷新按钮
+if(location.host == '192.168.1.188' ) {
+	document.write("<script language=\"javascript\" src=\"http:\/\/192.168.1.188/hmsh-agent-web\/src\/main\/webapp\/mobile-new\/js\/vconsole.min.js\" > <\/script><script>var v = new VConsole();<\/script>");
+//	if( document.getElementById('flexRefreshBtn')){
+//		document.getElementById('flexRefreshBtn').style.display = 'block';		
+//	}
+}
+;(function(doc, win) {
 
 	window.onLoad = function(fun) {
 		var defaults = window.onload;
@@ -71,19 +77,21 @@
 	//给body 添加 平滑滚动
 	window.smoothRoll = function() {
 		if(browser.versions.ios || browser.versions.iPad) {
-//			onLoad(function() {
-				var body = document.body,
-					html = document.getElementsByTagName('html')[0],
-					box = document.querySelector('body>*');
-				var classs = box.getAttribute('class'),
-					bodystyle = body.getAttribute('style'),
-					htmlstyle = html.getAttribute('style'),
-					boxstyle = box.getAttribute('style');
-				html.setAttribute('style', htmlstyle + 'background-color: white;');
-				body.setAttribute('style', bodystyle + 'height: 100%;overflow: hidden;');
-				box.setAttribute('style', htmlstyle + 'height: 100%;overflow: auto;    position: relative;z-index: 1;');
-				box.setAttribute('class', classs + ' smooth-roll');
-//			});
+			onLoad(function() {
+				setTimeout(function () {
+					var body = document.body,
+						html = document.getElementsByTagName('html')[0],
+						box = document.querySelector('.page');
+					var classs = box.getAttribute('class')||'',
+						bodystyle = body.getAttribute('style')||'',
+						htmlstyle = html.getAttribute('style')||'',
+						boxstyle = box.getAttribute('style')||'';
+					html.setAttribute('style', htmlstyle + 'background-color: white;');
+					body.setAttribute('style', bodystyle + 'height: 100%;overflow: hidden;');
+					box.setAttribute('style', boxstyle + 'height: 100%;overflow: auto;position: relative;z-index: 1;');
+					box.setAttribute('class', classs + ' smooth-roll');
+				},100);
+			});
 		}
 	}
 	/*
@@ -93,8 +101,4 @@
 	onResize(function(e) {
 		defineRem();
 	});
-	//如果是测试连接，显示刷新按钮
-	if(location.host == '192.168.1.188' && document.getElementById('flexRefreshBtn')) {
-		document.getElementById('flexRefreshBtn').style.display = 'block';
-	}
 }(document, window));

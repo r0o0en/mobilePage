@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta charset="utf-8" />
+		<title>春节放假公告</title>
+		<meta name="author" content="www.jlhmsh.com"/>
+		<meta name="keywords" content="吉粮惠民"/>
+		<meta name="description" content="吉粮惠民,下单即补贴，现在注册，开启省钱生活。"/>
+		
+		<meta name="renderer" content="webkit">
+		<meta http-equiv= "X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, minimal-ui">
+		<meta name="telephone=no" content="format-detection">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		
+		<meta name="format-detection" content="telephone=no">
+		<meta http-equiv="x-rim-auto-match" content="none">
+		<meta http-equiv="Pragma" contect="no-cache">
+		
+		<link rel="stylesheet" type="text/css" href="../../public/css/init.css"/>
+		<link rel="stylesheet" type="text/css" href="style/style.css"/>
+	</head>
+	
+	<body>
+		<img class="img-all bg-content" src="img/bg-content-top.png"/>
+		<div class="content bg-content bg-content-center">
+			<div class="content-box">
+				<img class="title-img" src="img/title.png"/>
+				<header class="cl-red red-line-header font-familt-hei">
+					各位亲爱的用户：<br />
+					春节将至，因快递公司陆续停止收件，吉粮惠民商城部分商品所在地区将陆续暂停发货。1月24日至2月10日期间，以下地区的小伙伴们在下单前，可以咨询商城客服是否可以发货：
+				</header>
+				<table border="1">
+					<tr>
+						<td><small>西藏、新疆</small></td>
+						<td><small>1月24日后需要咨询客服是否可以发货</small></td>
+					</tr>
+					<tr>
+						<td><small>青海、宁夏、内蒙古</small></td>
+						<td><small>1月28日后需要咨询客服是否可以发货</small></td>
+					</tr>
+					<tr>
+						<td><small>黑龙江、吉林、辽宁、陕西</small></td>
+						<td><small>1月31日后需要咨询客服是否可以发货</small></td>
+					</tr>
+					<tr>
+						<td><small>云南、贵州、四川</small></td>
+						<td><small>2月03日后需要咨询客服是否可以发货</small></td>
+					</tr>
+					<tr>
+						<td><small>重庆、海南、广西</small></td>
+						<td><small>2月04日后需要咨询客服是否可以发货</small></td>
+					</tr>
+					<tr>
+						<td><small>广东、福建、湖南、湖北、江西、河南、北京、天津、河北、山西、山东、江苏、浙江、上海、安徽</small></td>
+						<td><small>2月06日后需要咨询客服是否可以发货</small></td>
+					</tr>
+				</table>
+				<div class="cl-red font-familt-hei">
+					2月10日起全国所有地区停止发货，所有订单顺延至2月24日起开始处理。不便之处敬请谅解，祝大家新春愉快！
+				</div>
+			</div>
+		</div>
+		<img class="img-all bg-content" src="img/bg-content-bottom.png"/>
+	</body>
+	
+	<script src="../../public/js/zepto/zepto.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../public/js/init.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		judgePortraitThis();
+		$(function(){
+			$(window).resize(function () {
+				judgePortraitThis();
+			})
+		});
+		function judgePortraitThis() {
+			judgePortrait(function(w,h){
+				$('html').css('minHeight',h+'px');
+				console.log('竖屏',w,h);
+			},function(w,h){
+				$('html').css('minHeight','initial');
+				console.log('横屏',w,h);				
+			});
+		}
+		function judgePortrait(judgePortrait,landscape) { //判断竖屏
+			var class_s = 'judgePortrait';
+			var class_h = 'landscape';
+			var w = window.innerWidth;
+			var h = window.innerHeight;
+			if(h>w){
+				$('body').addClass(class_s).removeClass(class_h);
+				if(typeof judgePortrait == 'function'){
+					judgePortrait(w,h,'竖屏');	
+				}
+			}else{
+				$('body').addClass(class_h).removeClass(class_s);
+				if(typeof landscape == 'function'){
+					landscape(w,h,'横屏');
+				}
+			}
+		}
+	</script>
+</html>

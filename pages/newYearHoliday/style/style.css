@@ -1,0 +1,64 @@
+html {
+  background-color: #c41502;
+  min-height: 100%;
+}
+body {
+  background: #c41502 url(../img/bg.jpg) no-repeat center top / 100% auto;
+  min-height: 12rem;
+  padding-top: 6.4rem;
+  padding-bottom: 0.75rem;
+  position: relative;
+}
+body:after {
+  content: 'bg-footer';
+  font-size: 0;
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 0.75rem;
+  background: url(../img/bg-footer.png) no-repeat bottom center / 100% auto;
+}
+body.judgePortrait {
+  min-height: inherit;
+}
+.bg-content {
+  max-width: 83%;
+  margin: 0 auto;
+}
+.bg-content-center {
+  min-height: 3.8rem;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAm8AAAAKCAMAAADVTkl6AAAAclBMVEUAAAB2EAz/+dXaDRP/ZFByEQj//4XgIRPZDRP/lX//jXj+gm//PCj/OSX0KBX/JhHpJhC3Hg2OGAvAGQl+Ewn9GgX1FgLvEgD/U0CjGwzeEwPPIQ/968r98X7rfG7lVDXhOCfOIQ+jGw3eEgL/VEH/Uz/kvjhUAAAAAnRSTlMAQ5lG3RIAAACxSURBVFjD7ddXDsIwEEVRJ2MnpPdOS9v/FoEvZFtBiOCPSO+u4UgzjzFmCVHmXdE3dZWECw88n0dx6g4Z0d1xXKKrjdDHzvTs5lzo9Cob3DSOuO8FfAmTqm76ostLISzGVG8tvKEd3kjx1m54mzRvI7yhH72NmrcJ3pAJb/Sdt66YcU/RX7zp93TG/4YMeSPZG/YCso16I3hDcvCGDp3kjTa96XthxT5Fu7299+mq7IUHrFZQ9HYOhhEAAAAASUVORK5CYII=) repeat-y top center / 100% auto;
+}
+.content {
+  font-size: 12px;
+}
+.font-familt-hei {
+  font-family: SimHei;
+}
+.content-box {
+  margin: 0 auto;
+  max-width: 85%;
+  padding: 10px 0;
+}
+.title-img {
+  max-width: 70%;
+  display: block;
+  border: none;
+  margin: 0 auto 10px;
+}
+.cl-red {
+  color: #a60016;
+  line-height: 20px;
+}
+.red-line-header {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgoAAAAUCAYAAAGbhSUBAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA+dpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChXaW5kb3dzKSIgeG1wOkNyZWF0ZURhdGU9IjIwMTgtMDEtMjVUMDk6MzI6NTYrMDg6MDAiIHhtcDpNb2RpZnlEYXRlPSIyMDE4LTAxLTI1VDA5OjMzOjEyKzA4OjAwIiB4bXA6TWV0YWRhdGFEYXRlPSIyMDE4LTAxLTI1VDA5OjMzOjEyKzA4OjAwIiBkYzpmb3JtYXQ9ImltYWdlL3BuZyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpCNTA3OEMzMzAxNkYxMUU4OUJFN0Q3OTgxNTQzRTUwMiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpCNTA3OEMzNDAxNkYxMUU4OUJFN0Q3OTgxNTQzRTUwMiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkI1MDc4QzMxMDE2RjExRTg5QkU3RDc5ODE1NDNFNTAyIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkI1MDc4QzMyMDE2RjExRTg5QkU3RDc5ODE1NDNFNTAyIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+CzkY5wAAAsZJREFUeNpi/P//P8MoYGBgGg2C0YBAAQABxDiaNUZTw2ggwABAAI1mh1EwmiNGASYACKDRkmEUjJYKo2A0IYyC0YQwCkYTwijACQACsFvHBAAAAAyC+rc2hC+EcHMWAesAiAIgCoAoAFsCsGPHNAAAAAzC/LtGBk8rgixzNAKWAiAKgCgAogCIAiAKgCgAogCIAvBLAAHaORejCGIQDEPUXuzPxqzCSizDAQ8CBKI24Pyfc7cbkvAK6N6Mc/iPRgAAAADg0wMAAAAA8KAAAAAAADwoAAAAAAAPCgAAAADAgwIAAAAA8KAAAAAAADwoAAAAAAAPCgAAAAD49zzL5/srqb4RsRLpF3FO8ZaQ5nC/xRc0uVwpXlp79hc42RzHlai+1MmvXW63UntNkGtVdJvMdRRzaS9uyx/t/thYLIKQz/WmuxBt/tHxofRMf0xvuRy6tOdg7JVjS2jkw/Veek4s0y8VoTwGavZ6PkomWms9B2Jb9PKr5ST2cMth2iv93QeliOmyde3xMbX1LY/Th/S9x6kzBz120VE/FqPVmvkv4sGOc6j1wl6zpo9116eW/VYTemyf4K4zazGbiHmf76w1/Zlrmmc+5nutZ0Kkum/m1rrl7oE+plYf0hWcMs88ZW8x9T6jMw5Z9X92K+fbaV9uY15cvri8LbV9QxZ7tX7NcMhicvGwudeqX1OP7V0m9yHvj0Dc9oVC84t42rn98TWho2Liri/0+Eetdp96ej7K3q3v+OLDpzVyx+7/okpK9737PWzblrXnLvmeZFqrxbOav4uH3pU54Gtt2U8fLzsP+8zn78X0eebb97c1NWc/T9x0zzh4cdWLp3Xt3PnZrz/OMmOo2sizuM6Bf47L736GfNUXt7jDV+uqzLfmFvf1Ub0Zz7DfanP90ltpb506zH7mP9ZX20aPpGz22x0LZ929PF5fj/uPbwfevS+CBjF9AAAAAElFTkSuQmCC) repeat-y center top / auto;
+}
+table {
+  margin: 10px auto;
+}
+td {
+  width: 50%;
+  padding: 5px;
+}

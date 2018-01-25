@@ -1,0 +1,436 @@
+/*
+ 浮动、清楚浮动
+ */
+/*
+ flex  弹性布局
+ * */
+/*----- 可见度 -----*/
+/*
+ 溢出 隐藏
+ * */
+/*
+ 边框 阴影
+ * */
+/*
+ 圆角
+ * */
+/*
+ 过渡时间
+ transform  过渡
+ duration  持续、持续时间
+ delay  延期、延时
+ origin 原点、起源
+ * */
+/*----- 2D转换 -----*/
+/*
+常用 渐变
+ * */
+/*******************************
+    -------[=初始化]-------
+********************************/
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  max-width: 750px;
+  margin: 0 auto;
+}
+body {
+  font-size: 0.26rem;
+}
+ul,
+ol,
+figure,
+figcaption {
+  padding: 0;
+  margin: 0;
+}
+ul,
+ol {
+  list-style: none;
+}
+table {
+  border-collapse: collapse;
+}
+td,
+th {
+  border: 1px solid #ccc;
+}
+em {
+  font-style: normal;
+}
+address {
+  font-style: normal;
+}
+input,
+button,
+select,
+textarea,
+a {
+  outline: none;
+}
+a {
+  text-decoration: none;
+}
+a,
+.btn {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -khtml-user-select: none;
+  /*早期浏览器*/
+  user-select: none;
+}
+a,
+.btn,
+a:focus,
+.btn:focus,
+a:hover,
+.btn:hover,
+a:active,
+.btn:active {
+  outline: none;
+}
+a,
+.btn,
+a:active,
+.btn:active {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -moz-tap-highlight-color: rgba(0, 0, 0, 0);
+  -ms-tap-highlight-color: rgba(0, 0, 0, 0);
+  -o-tap-highlight-color: rgba(0, 0, 0, 0);
+  tap-highlight-color: rgba(0, 0, 0, 0);
+}
+strike {
+  color: #ccc;
+}
+mark {
+  background-color: transparent;
+}
+/*
+ img
+ * */
+img {
+  border: none;
+  width: auto;
+  max-width: 100%;
+}
+.img-all {
+  display: block;
+  width: 100%;
+}
+/*
+ bg
+ * */
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+/*
+ 浮动、清楚浮动
+ */
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.fl-l {
+  float: left;
+}
+.fl-r {
+  float: right;
+}
+.clear-bo {
+  clear: both;
+}
+/*
+ 本地环境
+ * */
+.flex-refresh {
+  display: none;
+  position: fixed;
+  right: 5%;
+  bottom: 5%;
+  z-index: 99;
+  text-align: center;
+  line-height: 1.2;
+  letter-spacing: 2px;
+  background-color: #0066FF;
+  color: white;
+  font-size: 0.25rem;
+  padding: 0.1rem;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+/*
+ 平滑滚动
+ * */
+.smooth-roll {
+  -webkit-overflow-scrolling: touch;
+}
+/*
+ 双击选中
+ * */
+.no-dbclick-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -khtml-user-select: none;
+  /*早期浏览器*/
+  user-select: none;
+}
+/*
+ 显示、隐藏
+ * */
+.show,
+.block {
+  display: block;
+}
+.show-inline,
+.inline {
+  display: inline;
+}
+.show-inline-block,
+.inline-block {
+  display: inline-block;
+}
+.hide {
+  display: none;
+}
+/*
+ 文本排列
+ * */
+.text-cenner {
+  text-align: center;
+}
+/*
+ 背景
+ * */
+.bg-white {
+  background-color: white;
+}
+.bg-ccc {
+  background-color: #ccc;
+}
+.bg-eee {
+  background-color: #eee;
+}
+/*
+ 字体颜色
+ * */
+.cl-white {
+  color: white;
+}
+.cl-999 {
+  color: #999;
+}
+.cl-red {
+  color: #FF0000;
+}
+/*
+ 下划线、模拟下划线
+ * */
+.underline {
+  text-decoration: underline;
+}
+.underline-red {
+  border-bottom: 1px solid red;
+}
+/*
+ flex 弹性布局
+ * */
+.flex {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+}
+.flex-1 {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  flex: 1;
+}
+.flex-2 {
+  -webkit-box-flex: 2;
+  -moz-box-flex: 2;
+  flex: 2;
+}
+.flex-3 {
+  -webkit-box-flex: 3;
+  -moz-box-flex: 3;
+  flex: 3;
+}
+.flex-4 {
+  -webkit-box-flex: 4;
+  -moz-box-flex: 4;
+  flex: 4;
+}
+/*
+预定义padding、margin
+* */
+.pd-rem-d2 {
+  padding: 0.2rem;
+}
+.pd-rem-d3 {
+  padding: 0.3rem;
+}
+.pd-rem-d4 {
+  padding: 0.4rem;
+}
+img {
+  border: none;
+  display: block;
+  max-width: 100%;
+}
+.modal {
+  top: 50% !important;
+}
+.btn-yello {
+  color: #8d5b1d;
+  background-color: #ffee1c;
+}
+.btn-yello:active {
+  color: #8d5b1d;
+  background-color: #dfcf0f;
+}
+.btn-orange {
+  color: white;
+  background-color: #ff8937;
+}
+.btn-orange:active {
+  background-color: #ee7019;
+}
+.bg-purple {
+  background-color: #8742e3;
+}
+.bg-brown {
+  background-color: #894e23;
+}
+.home {
+  height: 12rem;
+  padding: 0 0.5rem 0.35rem;
+  padding-top: 10.4rem;
+  display: block;
+  color: white;
+  overflow: hidden;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
+.form-1 {
+  text-align: center;
+}
+.form-1 input,
+.form-1 button {
+  display: block;
+  width: 4rem;
+  font-size: 0.5rem;
+  border: none;
+  margin: 0.3rem auto 0;
+  -webkit-border-radius: 45px;
+  -moz-border-radius: 45px;
+  border-radius: 45px;
+  text-align: center;
+  height: 0.85rem;
+}
+.form-1 input {
+  color: white;
+  background-color: #36064c;
+}
+.form-2 {
+  width: 100%;
+  display: flex;
+  display: -webkit-flex;
+}
+.form-2 input,
+.form-2 button {
+  margin: 0;
+  height: 0.7rem;
+  border: none;
+  line-height: 0.7rem;
+  font-size: 0.32rem;
+}
+.form-2 input {
+  border-radius: 0;
+  flex: 1;
+  -webkit-flex: 1;
+  text-align: center;
+  color: white;
+}
+.form-2 input::-webkit-input-placeholder {
+  color: #f3eaff;
+  text-shadow: none;
+  -webkit-text-fill-color: initial;
+}
+.form-2 button {
+  width: 2rem;
+}
+.success {
+  display: none;
+  color: white;
+  position: relative;
+  background-color: #f4c100;
+}
+.success .content {
+  display: none;
+  text-align: center;
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  top: 4rem;
+  height: 7.15rem;
+  padding-top: 1.6rem;
+}
+.success h2 {
+  margin: 0;
+  font-size: 0.78rem;
+  margin-bottom: 0.2rem;
+}
+.success h2 + p {
+  font-size: 0.4rem;
+  margin-bottom: 0.5rem;
+}
+.success .open-app {
+  font-size: 0.4rem;
+  line-height: 2;
+  display: block;
+  width: 70%;
+  margin: 0 auto;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+.success .bottom {
+  font-size: 0.3rem;
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+}
+body.active {
+  background-color: #f4c100;
+}
+body.active .home,
+body.active .home2 {
+  display: none;
+}
+body.active .success {
+  display: block;
+}

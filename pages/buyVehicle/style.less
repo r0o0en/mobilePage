@@ -1,0 +1,92 @@
+// @import '../../public/css/init.less';
+ @import '../../public/css/defined.less';
+// @import '../../public/css/btn.less';
+
+body{
+    background-color: white;
+}
+p{margin: 0 auto;}
+@title-hei:0.76rem;
+@person-pd-b:0.2rem;
+//@info-bottom:0.76rem;
+@info-bottom: 0.76rem - 0.1rem;
+section{
+//  position: absolute;left: 10%;
+    position: relative;
+    width: 80%;margin: 0 auto;
+    z-index: 1;
+    padding-bottom: @person-pd-b; 
+    .clearfix;
+}
+.main-bg{
+    position: relative;z-index: 0;
+    
+}
+.page{
+    min-height: 22.7rem;
+    position: relative;
+    background-image: url(img/bg.jpg);
+}
+.page,
+.title,
+.info{
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center;    
+}
+.person{
+    position: relative;z-index: 2;
+    width: 3.45rem;
+    float: right;
+}
+.title{
+    margin: 0 auto;
+    position: absolute;bottom: 0;left: 0;z-index: 3;
+    display: block;width:100%;height: @title-hei;line-height: @title-hei + 0.02rem;
+    text-align: center;
+    color: white;
+    font-weight: 500;
+    font-size: 0.24rem;
+    background-image: url(img/bg_title.png);
+//  background-size: 96% auto;
+}
+.info{
+    font-size: 0.24rem;
+    position: absolute; bottom: @info-bottom;left: 0.1rem;z-index: 1;
+    display: block;width: 2.8rem;height: 2rem;
+    padding: 0.3rem 0 0;
+    text-align: center;
+    color: #b2773d;
+    background-image: url(img/bg01.png);
+    p,small{
+        display: inline-block;
+        text-align: justify;
+        justify:inter-ideograph;
+    }
+    p + p {
+        font-size: 0.28rem;
+    }
+}
+section:nth-child(2n){
+    .person{
+        float: left;
+    }
+    .info{
+        left: auto;
+        right: 0rem;
+    }
+}
+.box01{
+    padding-top: 4.3rem;
+    .info{}
+    .person{}
+}
+.box02{
+    padding-top: 0.6rem;
+}
+.box03{
+    padding-top: 0.6rem;
+}
+.box04{
+    padding-top: 0.6rem;
+}
