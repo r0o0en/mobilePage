@@ -1,6 +1,6 @@
 //如果是测试连接，显示刷新按钮
-if(location.host == '192.168.1.188' ) {
-	document.write("<script language=\"javascript\" src=\"http:\/\/192.168.1.188/hmsh-agent-web\/src\/main\/webapp\/mobile-new\/js\/vconsole.min.js\" > <\/script><script>var v = new VConsole();<\/script>");
+if(location.host == '192.168.100.178' ) {
+	document.write("<script language=\"javascript\" src=\"http:\/\/192.168.100.178/hmsh-agent-web\/src\/main\/webapp\/mobile-new\/js\/vconsole.min.js\" > <\/script><script>var v = new VConsole();<\/script>");
 //	if( document.getElementById('flexRefreshBtn')){
 //		document.getElementById('flexRefreshBtn').style.display = 'block';		
 //	}
@@ -37,7 +37,7 @@ if(location.host == '192.168.1.188' ) {
 			clientW = doc.documentElement.clientWidth ? doc.documentElement.clientWidth : doc.body.clientWidth;
 		doc.documentElement.style.fontSize = 100 * (clientW >= maxW ? 1 : clientW / maxW) + 'px';
 	};
-
+	
 	//获取参数
 	window.getRequest = function() {
 		var href = location.search;
@@ -101,4 +101,16 @@ if(location.host == '192.168.1.188' ) {
 	onResize(function(e) {
 		defineRem();
 	});
+	
 }(document, window));
+
+var _mtac = {};
+function statistics() {
+	var mta = document.createElement("script");
+  	mta.src = "http://pingjs.qq.com/h5/stats.js?v2.0.4";
+  	mta.setAttribute("name", "MTAH5");
+  	mta.setAttribute("sid", "500595736");
+
+  	var s = document.getElementsByTagName("script")[0];
+  	s.parentNode.insertBefore(mta, s);
+}
