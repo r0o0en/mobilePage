@@ -2,66 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a2f5fa1e-caed-4131-9fdc-39b21280b5b4" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/link.html" afterPath="$PROJECT_DIR$/link.html" />
-      <change beforePath="$PROJECT_DIR$/pages/buyVehicle/index.html" afterPath="$PROJECT_DIR$/pages/buyVehicle/index.html" />
-      <change beforePath="$PROJECT_DIR$/pages/elevent/index.html" afterPath="$PROJECT_DIR$/pages/elevent/index.html" />
-      <change beforePath="$PROJECT_DIR$/pages/goods/index.html" afterPath="$PROJECT_DIR$/pages/goods/index.html" />
-      <change beforePath="$PROJECT_DIR$/pages/greenhand-discard/index.html" afterPath="$PROJECT_DIR$/pages/greenhand-discard/index.html" />
-      <change beforePath="$PROJECT_DIR$/pages/greenhand-discard/index_3C.html" afterPath="$PROJECT_DIR$/pages/greenhand-discard/index_3C.html" />
-      <change beforePath="$PROJECT_DIR$/pages/greenhand-discard/index_both11.html" afterPath="$PROJECT_DIR$/pages/greenhand-discard/index_both11.html" />
-      <change beforePath="$PROJECT_DIR$/pages/greenhand-discard/index_cate.html" afterPath="$PROJECT_DIR$/pages/greenhand-discard/index_cate.html" />
-      <change beforePath="$PROJECT_DIR$/pages/greenhand-discard/index_gold.html" afterPath="$PROJECT_DIR$/pages/greenhand-discard/index_gold.html" />
-      <change beforePath="$PROJECT_DIR$/pages/greenhand-discard/index_goods.html" afterPath="$PROJECT_DIR$/pages/greenhand-discard/index_goods.html" />
-      <change beforePath="$PROJECT_DIR$/pages/greenhand-discard/index_half_price_car.html" afterPath="$PROJECT_DIR$/pages/greenhand-discard/index_half_price_car.html" />
-      <change beforePath="$PROJECT_DIR$/pages/greenhand-discard/index_hotel.html" afterPath="$PROJECT_DIR$/pages/greenhand-discard/index_hotel.html" />
-      <change beforePath="$PROJECT_DIR$/pages/greenhand-discard/index_pay_car.html" afterPath="$PROJECT_DIR$/pages/greenhand-discard/index_pay_car.html" />
-      <change beforePath="$PROJECT_DIR$/pages/greenhand-discard/main.js" afterPath="$PROJECT_DIR$/pages/greenhand-discard/main.js" />
-      <change beforePath="$PROJECT_DIR$/pages/greenhand-discard/noob.html" afterPath="$PROJECT_DIR$/pages/greenhand-discard/noob.html" />
-      <change beforePath="$PROJECT_DIR$/pages/greenhand/img/bg.jpg" afterPath="$PROJECT_DIR$/pages/greenhand/img/bg.jpg" />
-      <change beforePath="$PROJECT_DIR$/pages/greenhand/img/bg_3c.jpg" afterPath="$PROJECT_DIR$/pages/greenhand/img/bg_3c.jpg" />
-      <change beforePath="$PROJECT_DIR$/pages/greenhand/img/bg_both11.jpg" afterPath="$PROJECT_DIR$/pages/greenhand/img/bg_both11.jpg" />
-      <change beforePath="$PROJECT_DIR$/pages/greenhand/img/bg_cate.jpg" afterPath="$PROJECT_DIR$/pages/greenhand/img/bg_cate.jpg" />
-      <change beforePath="$PROJECT_DIR$/pages/greenhand/img/bg_gold.jpg" afterPath="$PROJECT_DIR$/pages/greenhand/img/bg_gold.jpg" />
-      <change beforePath="$PROJECT_DIR$/pages/greenhand/img/bg_gold_bg2.png" afterPath="$PROJECT_DIR$/pages/greenhand/img/bg_gold_bg2.png" />
-      <change beforePath="$PROJECT_DIR$/pages/greenhand/img/bg_goods.jpg" afterPath="$PROJECT_DIR$/pages/greenhand/img/bg_goods.jpg" />
-      <change beforePath="$PROJECT_DIR$/pages/greenhand/img/bg_half_price_car.jpg" afterPath="$PROJECT_DIR$/pages/greenhand/img/bg_half_price_car.jpg" />
-      <change beforePath="$PROJECT_DIR$/pages/greenhand/img/bg_half_price_car_bg2.jpg" afterPath="$PROJECT_DIR$/pages/greenhand/img/bg_half_price_car_bg2.jpg" />
-      <change beforePath="$PROJECT_DIR$/pages/greenhand/img/bg_hotel.jpg" afterPath="$PROJECT_DIR$/pages/greenhand/img/bg_hotel.jpg" />
-      <change beforePath="$PROJECT_DIR$/pages/greenhand/img/bg_pay_car.jpg" afterPath="$PROJECT_DIR$/pages/greenhand/img/bg_pay_car.jpg" />
-      <change beforePath="$PROJECT_DIR$/pages/greenhand/img/bg_pay_car2.jpg" afterPath="$PROJECT_DIR$/pages/greenhand/img/bg_pay_car2.jpg" />
-      <change beforePath="$PROJECT_DIR$/pages/greenhand/img/bg_pay_liquor.jpg" afterPath="$PROJECT_DIR$/pages/greenhand/img/bg_pay_liquor.jpg" />
-      <change beforePath="$PROJECT_DIR$/pages/greenhand/img/noob-bg-bottom.jpg" afterPath="$PROJECT_DIR$/pages/greenhand/img/noob-bg-bottom.jpg" />
-      <change beforePath="$PROJECT_DIR$/pages/greenhand/img/noob-bg-top.jpg" afterPath="$PROJECT_DIR$/pages/greenhand/img/noob-bg-top.jpg" />
-      <change beforePath="$PROJECT_DIR$/pages/greenhand/img/noob-goods-icon01.png" afterPath="$PROJECT_DIR$/pages/greenhand/img/noob-goods-icon01.png" />
-      <change beforePath="$PROJECT_DIR$/pages/greenhand/img/noob-goods-icon02.png" afterPath="$PROJECT_DIR$/pages/greenhand/img/noob-goods-icon02.png" />
-      <change beforePath="$PROJECT_DIR$/pages/greenhand/img/noob-goods01.jpg" afterPath="$PROJECT_DIR$/pages/greenhand/img/noob-goods01.jpg" />
-      <change beforePath="$PROJECT_DIR$/pages/greenhand/img/noob-goods02.jpg" afterPath="$PROJECT_DIR$/pages/greenhand/img/noob-goods02.jpg" />
-      <change beforePath="$PROJECT_DIR$/pages/greenhand/img/success-bg01.jpg" afterPath="$PROJECT_DIR$/pages/greenhand/img/success-bg01.jpg" />
-      <change beforePath="$PROJECT_DIR$/pages/greenhand/index.html" afterPath="$PROJECT_DIR$/pages/greenhand/index.html" />
-      <change beforePath="$PROJECT_DIR$/pages/greenhand/index_3c.html" afterPath="$PROJECT_DIR$/pages/greenhand/index_3c.html" />
-      <change beforePath="$PROJECT_DIR$/pages/greenhand/index_both11.html" afterPath="$PROJECT_DIR$/pages/greenhand/index_both11.html" />
-      <change beforePath="$PROJECT_DIR$/pages/greenhand/index_cate.html" afterPath="$PROJECT_DIR$/pages/greenhand/index_cate.html" />
-      <change beforePath="$PROJECT_DIR$/pages/greenhand/index_gold.html" afterPath="$PROJECT_DIR$/pages/greenhand/index_gold.html" />
-      <change beforePath="$PROJECT_DIR$/pages/greenhand/index_goods.html" afterPath="$PROJECT_DIR$/pages/greenhand/index_goods.html" />
-      <change beforePath="$PROJECT_DIR$/pages/greenhand/index_half_price_car.html" afterPath="$PROJECT_DIR$/pages/greenhand/index_half_price_car.html" />
-      <change beforePath="$PROJECT_DIR$/pages/greenhand/index_hotel.html" afterPath="$PROJECT_DIR$/pages/greenhand/index_hotel.html" />
-      <change beforePath="$PROJECT_DIR$/pages/greenhand/index_pay_car.html" afterPath="$PROJECT_DIR$/pages/greenhand/index_pay_car.html" />
-      <change beforePath="$PROJECT_DIR$/pages/greenhand/index_pay_car2.html" afterPath="$PROJECT_DIR$/pages/greenhand/index_pay_car2.html" />
-      <change beforePath="$PROJECT_DIR$/pages/greenhand/index_pay_liquor.html" afterPath="$PROJECT_DIR$/pages/greenhand/index_pay_liquor.html" />
-      <change beforePath="$PROJECT_DIR$/pages/greenhand/noob.html" afterPath="$PROJECT_DIR$/pages/greenhand/noob.html" />
-      <change beforePath="$PROJECT_DIR$/pages/greenhand/style/main.js" afterPath="$PROJECT_DIR$/pages/greenhand/style/main.js" />
-      <change beforePath="$PROJECT_DIR$/pages/headlineNews/index.html" afterPath="$PROJECT_DIR$/pages/headlineNews/index.html" />
-      <change beforePath="$PROJECT_DIR$/pages/helpCenter/index.html" afterPath="$PROJECT_DIR$/pages/helpCenter/index.html" />
-      <change beforePath="$PROJECT_DIR$/pages/helpCenter/style/style.css" afterPath="$PROJECT_DIR$/pages/helpCenter/style/style.css" />
-      <change beforePath="$PROJECT_DIR$/pages/helpCenter/style/style.less" afterPath="$PROJECT_DIR$/pages/helpCenter/style/style.less" />
-      <change beforePath="$PROJECT_DIR$/pages/newYearHoliday/index.html" afterPath="$PROJECT_DIR$/pages/newYearHoliday/index.html" />
-      <change beforePath="$PROJECT_DIR$/pages/openApp/index.html" afterPath="$PROJECT_DIR$/pages/openApp/index.html" />
-      <change beforePath="$PROJECT_DIR$/pages/theme/theme1/index.html" afterPath="$PROJECT_DIR$/pages/theme/theme1/index.html" />
-      <change beforePath="$PROJECT_DIR$/pages/theme/theme1/test.html" afterPath="$PROJECT_DIR$/pages/theme/theme1/test.html" />
       <change beforePath="$PROJECT_DIR$/public/js/init.js" afterPath="$PROJECT_DIR$/public/js/init.js" />
-      <change beforePath="$PROJECT_DIR$/testUa.html" afterPath="$PROJECT_DIR$/testUa.html" />
-      <change beforePath="$PROJECT_DIR$/判断锁屏.html" afterPath="$PROJECT_DIR$/判断锁屏.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -78,6 +21,13 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/.gitignore" />
+      </list>
+    </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
@@ -114,6 +64,17 @@
             <path>
               <item name="mobilePage" type="b2602c69:ProjectViewProjectNode" />
               <item name="mobilePage" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mobilePage" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mobilePage" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mobilePage" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mobilePage" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -157,12 +118,20 @@
       <workItem from="1516865459238" duration="64000" />
       <workItem from="1516866021536" duration="26000" />
       <workItem from="1517206453950" duration="5000" />
-      <workItem from="1521622166921" duration="24000" />
+      <workItem from="1521622166921" duration="292000" />
     </task>
+    <task id="LOCAL-00001" summary="iphoneX样式修复：viewport-fit解决iphoneX的“刘海”问题（全局搜索替换，部分没有替换到）">
+      <created>1521622275262</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1521622275262</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="185000" />
+    <option name="totallyTimeSpent" value="453000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -218,6 +187,10 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="iphoneX样式修复：viewport-fit解决iphoneX的“刘海”问题（全局搜索替换，部分没有替换到）" />
+    <option name="LAST_COMMIT_MESSAGE" value="iphoneX样式修复：viewport-fit解决iphoneX的“刘海”问题（全局搜索替换，部分没有替换到）" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
@@ -244,6 +217,22 @@
     <entry file="file://$PROJECT_DIR$/pages/program/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="5" column="6" lean-forward="false" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/init.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-648">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
