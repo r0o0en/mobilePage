@@ -1,17 +1,15 @@
-if(location.host == '192.168.1.188' ) {
-//	document.write("<script language=\"javascript\" src=\"http:\/\/192.168.1.188/hmsh-agent-web\/src\/main\/webapp\/mobile-new\/js\/vconsole.min.js\" > <\/script><script>var v = new VConsole();<\/script>");
+if(location.host == '192.168.100.178' ) {
+	document.write("<script language=\"javascript\" src=\"http:\/\/192.168.100.178/hmsh-agent-web\/src\/main\/webapp\/mobile-new\/js\/vconsole.min.js\" > <\/script><script>var v = new VConsole();<\/script>");
 //	if( document.getElementById('flexRefreshBtn')){
 //		document.getElementById('flexRefreshBtn').style.display = 'block';		
 //	}
 }
 //监听窗口变化
-defineRem();
-modal('测试',1000000);
 $(window).resize(function (e) {
 	defineRem();
 });
 $(function () {
-	
+	defineRem();
 	//初始化给高
 //	if(!/noob\.html/i.test(location.pathname)){
 //		setBodyHeight();
@@ -40,12 +38,12 @@ $(function () {
 	
 	//监听表单提交
 	var urld = getQueryData();
-	var islocally = location.origin == 'http://192.168.1.188';
+	var islocally = location.origin == 'http://192.168.100.178';
 	var istest =  urld.serve && urld.serve == 'test';
 	
 	var url_judgeUser = function() {
 		if( islocally || istest) {
-			alert('（测试）请求接口：' + 'http://test.hmsh.com/v1.0/activity/receiveStamps');
+//			alert('（测试）请求接口：' + 'http://test.hmsh.com/v1.0/activity/receiveStamps');
 			return 'http://test.hmsh.com/v1.0/activity/receiveStamps';
 		}else{
 			return 'http://app.jlhmsh.com/v1.0/activity/receiveStamps';
@@ -100,12 +98,17 @@ $(function () {
 
 
 function defineRem(maxW) {
-	/*
-	 clientW >= maxW 时  1rem = 100px , 小于等于时 1rem = 100 * clientW/maxW;
-	 * */
-	var maxW = maxW || 750,
-		clientW = document.documentElement.clientWidth ? document.documentElement.clientWidth : document.body.clientWidth;
-	document.documentElement.style.fontSize = 100 * (clientW >= maxW ? 1 : clientW / maxW) + 'px';
+	try{
+		/*
+		 clientW >= maxW 时  1rem = 100px , 小于等于时 1rem = 100 * clientW/maxW;
+		 * */
+		var maxW = maxW || 750,
+			clientW = document.documentElement.clientWidth ? document.documentElement.clientWidth : document.body.clientWidth;
+		document.documentElement.style.fontSize = 100 * (clientW >= maxW ? 1 : clientW / maxW) + 'px';
+	}catch(e){
+		//TODO handle the exception
+		alert('function defineRem error');
+	}
 }
 
 function setBodyHeight(target,h){
@@ -284,4 +287,15 @@ function getQueryData() {
 		}
 	}
 	return theRequest;
+}
+
+var _mtac = {};
+function statistics() {
+	var mta = document.createElement("script");
+  	mta.src = "http://pingjs.qq.com/h5/stats.js?v2.0.4";
+  	mta.setAttribute("name", "MTAH5");
+  	mta.setAttribute("sid", "500595736");
+
+  	var s = document.getElementsByTagName("script")[0];
+  	s.parentNode.insertBefore(mta, s);
 }

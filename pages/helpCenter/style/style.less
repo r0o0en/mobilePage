@@ -9,7 +9,7 @@ html {
 }
 body{
     background-color: #f4f4f4;
-    font-size: 0.30rem;
+    font-size: 16px;
 //  padding-top: @public-pd;
 }
 img {
@@ -22,6 +22,7 @@ a{
 }
 .flex-number();
 .column{
+    
 }
 .column-head{
     @h:40px;
@@ -30,7 +31,7 @@ a{
     padding: 0 @public-pd;
     border-bottom: 1px solid #E6E6E6;
     background-color: white;
-    font-size: 18px;
+    font-size: inherit;
     .flex;
     &.active ~ .column-article{
         display: block;
@@ -59,6 +60,9 @@ a{
     }
     div,p,ol,img{
         margin-bottom: 10px;
+    }
+    p{
+        color: #666;
     }
 }
 

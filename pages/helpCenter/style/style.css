@@ -34,7 +34,7 @@ html {
 }
 body {
   background-color: #f4f4f4;
-  font-size: 0.30rem;
+  font-size: 16px;
 }
 img {
   margin: 0;
@@ -55,7 +55,7 @@ a {
   padding: 0 15px;
   border-bottom: 1px solid #E6E6E6;
   background-color: white;
-  font-size: 18px;
+  font-size: inherit;
   display: -webkit-flex;
   display: -moz-flex;
   display: flex;
@@ -88,6 +88,9 @@ a {
 .column-article ol,
 .column-article img {
   margin-bottom: 10px;
+}
+.column-article p {
+  color: #666;
 }
 .column-head-right {
   width: 20px;
