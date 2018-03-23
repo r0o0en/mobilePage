@@ -3,7 +3,7 @@ var home=$('.home2');
 home.css({'minHeight':window.innerHeight});
 var phone = $('#phone');
 var url_judgeUser = function() {
-	if(location.origin == 'http://192.168.100.178') {
+	if(location.origin == 'http://192.168.1.176') {
 		return 'http://test.hmsh.com/v1.0/activity/receiveStamps';
 	} else {
 		return 'http://test.hmsh.com/v1.0/activity/receiveStamps';

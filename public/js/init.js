@@ -1,6 +1,6 @@
 //如果是测试连接，显示刷新按钮
-if(location.host == '192.168.100.178' ) {
-	document.write("<script language=\"javascript\" src=\"http:\/\/192.168.100.178/hmsh-agent-web\/src\/main\/webapp\/mobile-new\/js\/vconsole.min.js\" > <\/script><script>var v = new VConsole();<\/script>");
+if(location.host == '192.168.1.176' ) {
+	document.write("<script language=\"javascript\" src=\"http:\/\/192.168.1.176/hmsh-agent-web\/src\/main\/webapp\/mobile-new\/js\/vconsole.min.js\" > <\/script><script>var v = new VConsole();<\/script>");
 //	if( document.getElementById('flexRefreshBtn')){
 //		document.getElementById('flexRefreshBtn').style.display = 'block';		
 //	}

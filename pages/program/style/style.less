@@ -1,0 +1,244 @@
+@import (reference) '../../../public/css/btn.less';
+@main-color:#01ab87;
+@main-padding:15px;
+@font-size-title:22px;
+@font-size-text:14px;
+
+.btn-main{
+//  -webkit-border-radius: 0;
+//  -moz-border-radius: 0;
+//  border-radius: 0;
+    //默认的颜色、active
+    width: 100%;
+    .defined-btn-color-font();
+    .defined-btn-color(@main-color);
+    .defined-btn-size(@font-size-text,10px 20px,1.6);
+}
+body {
+    color: #333;
+    font-size: @font-size-text;
+    padding-bottom: 40px;
+}
+
+p {
+    font-size: inherit;
+}
+.text-indent{
+    &,p{        
+        text-indent: @font-size-text*2;
+    }
+    p.text-indent-no{        
+        text-indent: 0;
+    }
+}
+.text-indent-no{
+    &,p{        
+        text-indent: 0;
+    }
+}
+.text-underline{
+    text-decoration: underline;
+}
+.list-style-decimal{
+    list-style-type: decimal;
+    padding-left: 20px;
+}
+.list-style-decimal-inline{
+    list-style-type: decimal;
+    padding-left: 0px;
+    list-style-position: inside;
+}
+.font-size-title{
+    font-size: @font-size-title;
+}
+.font-size-titile-two{
+    font-size: 16px;
+}
+.font-size-inherit{
+    font-size: inherit;
+}
+.btn{
+    cursor: pointer;
+}
+.section {
+    padding: @main-padding;
+    ul {
+        list-style-type: decimal;
+        padding-left: 20px;
+    }
+    header {
+        text-align: center;
+        p{
+            display: inline-block;
+            font-weight: 900;
+            font-size: @font-size-title;
+            position: relative;
+            padding: 0 20px;
+            margin-bottom: 0;
+            &.no-bottom:before {
+              content: none;
+            }
+            &:before {
+                content: 'border';
+                font-size: 0;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                z-index: 0;
+                display: block;
+                width: 100%;
+                height: 14px;
+                background-color: #bceae0;
+                -webkit-border-radius: 6px;
+                -moz-border-radius: 6px;
+                border-radius: 6px;
+            }
+            strong {
+                position: relative;
+                z-index: 1;
+            }
+        }
+    }
+}
+.font-weight-bold{
+    font-weight: bold;
+}
+
+
+.item p {
+    text-align: center;
+    &>* {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    img {
+        width: 50px;
+        height: 50px;
+    }
+
+    span {
+        padding-left: 10px;
+        min-width: 60%;
+        text-align: left;
+    }
+    
+}
+
+table {
+    text-align: center;
+    width: 100%;
+}
+
+th,
+td {
+    border-color: #222222;
+    padding: 5px;
+}
+
+.bg-green {
+    background-color: @main-color;
+    color: white;
+}
+
+
+.color-green {
+    color: #01ab87;
+}
+
+.ul-inline-four {
+    li {
+        float: left;
+    }
+}
+.table-four-td{
+    text-align: left;
+    td,th{
+        width: 25%;
+    }
+}
+
+.tab-menu{
+    @height:40px;
+    &,ul{
+        height: @height;
+        margin: 0 auto;
+        padding: 0;        
+    }
+    ul{
+        background-color: white;
+        list-style: none;
+        text-overflow: ellipsis;white-space: nowrap;overflow: hidden;
+        overflow-x: auto;
+        overflow-y: hidden;
+        border-bottom: 1px solid @main-color;
+    }
+    li{
+        display: inline-block;
+        color: @main-color;
+        &.active{
+            background-color: @main-color;
+            color: white;
+        }
+    }
+    a{
+        padding: 0 10px;
+        color: inherit;
+        display: block;
+        height: @height;
+        line-height: @height;
+    }
+    &.active{
+        ul{
+            position: fixed;top: 0;left: 0;right: 0;z-index: 99;
+            width: 100%;
+        }
+    }
+}
+.tab-container{
+    
+}
+.tab-box{
+    display: none;
+    &.active{
+        display: block;        
+    } 
+}
+.link-a{
+    text-decoration: underline;
+    &:link{
+        color: @main-color;  
+    }
+    &:visited{
+        color: #999;
+    }
+    &:hover{
+        color: #3399FF;
+    }
+    &:active{
+        color: #3399FF;
+    }
+    
+}
+
+.margin-bottom-no{
+    margin-bottom: 0;
+}
+.margin-top-no{
+    margin-top: 0;
+}
+.margin-top-bottom-no{
+    margin-bottom: 0;
+    margin-top: 0;
+}
+.padding{
+    padding: @main-padding;
+}
+.padding-left-right{
+    padding-left: @main-padding;
+    padding-right: @main-padding;
+}
+.padding-top-bottom{
+    padding-top: @main-padding;
+    padding-bottom: @main-padding;
+}
+
