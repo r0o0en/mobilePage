@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>判断浏览器</title>
+		<meta name="author" content="www.jlhmsh.com"/>
+		<meta name="keywords" content=""/>
+		<meta name="description" content=""/>
+		
+		<meta name="renderer" content="webkit">
+		<meta http-equiv= "X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, minimal-ui, viewport-fit=cover">
+		<meta name="telephone=no" content="format-detection">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		
+		<meta name="format-detection" content="telephone=no">
+		<meta http-equiv="x-rim-auto-match" content="none">
+		<meta http-equiv="Pragma" contect="no-cache">
+		<link rel="stylesheet" type="text/css" href="../../public/css/init.css"/>
+		<style type="text/css">
+			body{
+				font-size: 15px;
+				line-height: 2;
+				padding: 10px;
+			}
+			header{
+				font-size: 18px;
+			}
+			header,section{
+				padding: 10px;
+				margin: 0 auto;
+				border: 1px solid #ccc;
+			}
+			section~header {
+				margin-top: 20px;
+			}
+			ul,ol{				
+				list-style: none;
+			}
+			li{
+				display: flex;
+				display: -webkit-flex;
+				/*text-align: center;*/
+			}
+			li span,
+			li em{
+				display: inline-block;
+				-webkit-flex: 1;
+				flex: 1;
+			}
+			li span{
+				width: 120px;
+			}
+			
+		</style>
+	</head>
+	<body class="auto-share-hint">
+		<!--<script src="../../public/js/init.js" type="text/javascript" charset="utf-8"></script>-->
+		<script src="../../public/js/zepto/zepto.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../public/js/vconsole.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../pages/shareHint/shareHitnt.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var v = new VConsole();
+			//检测浏览器
+			window.browser = {
+				versions: function() {
+					var u = navigator.userAgent,
+						app = navigator.appVersion;
+					return {
+						trident: u.indexOf('Trident') > -1, //IE内核
+						ie: u.indexOf('Trident') > -1, //IE内核
+						presto: u.indexOf('Presto') > -1, //opera内核
+						webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+						gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+						
+						iPhone: u.indexOf('iPhone') > -1, //是否为iPhone或者QQHD浏览器
+						iPad: u.indexOf('iPad') > -1, //是否iPad
+						webApp: u.indexOf('Safari') == -1, //是否web应该程序，没有头部与底部
+						
+						mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+						android: u.indexOf('Android') > -1 || u.indexOf('Adr') > -1, //android终端
+						ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+						weixin: u.indexOf('MicroMessenger') > -1, //是否微信 （2015-01-22新增）
+						qqBrowser: u.indexOf('MQQBrowser') > -1,
+						qq:/QQ\/[\d\.]+/ig.test(u),
+						JLHM:/hmsh\s?\d?/ig.test(u)
+					};
+				}(),
+				language: (navigator.browserLanguage || navigator.language).toLowerCase()
+			};
+			
+			var $wp = $('body');
+			$wp.append('<header>navigator.<span class="cl-red">userAgent</span></header>');
+			$wp.append('<section>'+navigator.userAgent+'</section>');
+			$wp.append('<header>navigator.<span class="cl-red">appVersion</span></header>');
+			$wp.append('<section>'+navigator.appVersion+'</section>');
+			
+			$wp.append('<header>borwser.<span class="cl-red">versions</span></header>');
+			$wp.append('<section>'+eachEcho(browser.versions)+'</section>');
+			
+			function eachEcho(obj) {
+				if(!obj){return false;}
+				var str = '<ul>';
+				$.each(obj,function (i,e) {
+						if(typeof e == 'object'){
+							eachEcho(e);
+							return true;
+						}
+						str += '<li>';
+						str += '<span>';
+						str += i;
+						str += '</span>';
+						str += '<span class="'+(e===true?'cl-blue':'cl-red')+'">';
+						str += e;
+						str += '</span>';
+						str += '</li>';
+				})
+				str += '</ul>';
+				return str;
+			}
+			
+		</script>
+	</body>
+</html>
