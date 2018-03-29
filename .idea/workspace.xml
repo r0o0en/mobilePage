@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a2f5fa1e-caed-4131-9fdc-39b21280b5b4" name="Default" comment="ios scroll 触发频率兼容：保险介绍页（/pages/program/index.html）在ios设备下 吉粮惠民APP内置浏览器$(window).scroll()触发频率兼容（判断为ios 增加'touchmove',并不完美，在滚动释放后弹性滚动的距离无法监听，仍要等到滚动彻底停止。）">
+    <list default="true" id="a2f5fa1e-caed-4131-9fdc-39b21280b5b4" name="Default" comment="旧版保险页">
+      <change beforePath="" afterPath="$PROJECT_DIR$/program/img/xiaochengxu-baoxian.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/program/index.html" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/link.html" afterPath="$PROJECT_DIR$/link.html" />
-      <change beforePath="$PROJECT_DIR$/link2.html" afterPath="$PROJECT_DIR$/link2.html" />
-      <change beforePath="$PROJECT_DIR$/pages/program/index.html" afterPath="$PROJECT_DIR$/pages/program/index.html" />
-      <change beforePath="$PROJECT_DIR$/pages/program/style/style.css" afterPath="$PROJECT_DIR$/pages/program/style/style.css" />
-      <change beforePath="$PROJECT_DIR$/pages/program/style/style.less" afterPath="$PROJECT_DIR$/pages/program/style/style.less" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,7 +17,18 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/program/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="16" column="60" lean-forward="true" selection-start-line="16" selection-start-column="60" selection-end-line="16" selection-end-column="60" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -149,7 +157,7 @@
       <workItem from="1522137714285" duration="273000" />
       <workItem from="1522138098218" duration="1042000" />
       <workItem from="1522200685252" duration="23000" />
-      <workItem from="1522314857291" duration="476000" />
+      <workItem from="1522314857291" duration="712000" />
     </task>
     <task id="LOCAL-00001" summary="iphoneX样式修复：viewport-fit解决iphoneX的“刘海”问题（全局搜索替换，部分没有替换到）">
       <created>1521622275262</created>
@@ -200,11 +208,25 @@
       <option name="project" value="LOCAL" />
       <updated>1522137967850</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="ios scroll 触发频率兼容：保险介绍页（/pages/program/index.html）在ios设备下 吉粮惠民APP内置浏览器$(window).scroll()触发频率兼容（判断为ios 增加'touchmove',并不完美，在滚动释放后弹性滚动的距离无法监听，仍要等到滚动彻底停止。）">
+      <created>1522315339677</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1522315339677</updated>
+    </task>
+    <task id="LOCAL-00009" summary="旧版保险页备份">
+      <created>1522315536841</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1522315536841</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7489000" />
+    <option name="totallyTimeSpent" value="7725000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -225,7 +247,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.69096845" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40805224" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -279,7 +301,8 @@
     <MESSAGE value="/shareHint/ 分享提示模块" />
     <MESSAGE value="demo/judgeBrowser/ demo页：检测浏览器" />
     <MESSAGE value="ios scroll 触发频率兼容：保险介绍页（/pages/program/index.html）在ios设备下 吉粮惠民APP内置浏览器$(window).scroll()触发频率兼容（判断为ios 增加'touchmove',并不完美，在滚动释放后弹性滚动的距离无法监听，仍要等到滚动彻底停止。）" />
-    <option name="LAST_COMMIT_MESSAGE" value="ios scroll 触发频率兼容：保险介绍页（/pages/program/index.html）在ios设备下 吉粮惠民APP内置浏览器$(window).scroll()触发频率兼容（判断为ios 增加'touchmove',并不完美，在滚动释放后弹性滚动的距离无法监听，仍要等到滚动彻底停止。）" />
+    <MESSAGE value="旧版保险页备份" />
+    <option name="LAST_COMMIT_MESSAGE" value="旧版保险页备份" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -402,18 +425,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/program/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="35" column="28" lean-forward="true" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/shareHint/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2052">
           <caret line="5" column="21" lean-forward="true" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/program/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="16" column="60" lean-forward="true" selection-start-line="16" selection-start-column="60" selection-end-line="16" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/旧版保险页备份.patch">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
