@@ -158,12 +158,23 @@ td {
 }
 
 .tab-menu{
+    position: relative;z-index: 9;
     @height:40px;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0px;
     &,ul{
         height: @height;
         margin: 0 auto;
-        padding: 0;        
+        padding: 0;    
     }
+//  ul,li{
+//      -webkit-transition: 0.4s ease;
+//      -moz-transition: 0.4s ease;
+//      -ms-transition: 0.4s ease;
+//      -o-transition: 0.4s ease;
+//      transition: 0.4s ease;    
+//  }
     ul{
         background-color: white;
         list-style: none;
@@ -171,10 +182,12 @@ td {
         overflow-x: auto;
         overflow-y: hidden;
         border-bottom: 1px solid @main-color;
+        font-size: 0;
     }
     li{
         display: inline-block;
         color: @main-color;
+        font-size: @font-size-text;
         &.active{
             background-color: @main-color;
             color: white;

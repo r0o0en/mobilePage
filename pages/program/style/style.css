@@ -146,6 +146,13 @@ td {
 .table-four-td th {
   width: 25%;
 }
+.tab-menu {
+  position: relative;
+  z-index: 9;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0px;
+}
 .tab-menu,
 .tab-menu ul {
   height: 40px;
@@ -161,10 +168,12 @@ td {
   overflow-x: auto;
   overflow-y: hidden;
   border-bottom: 1px solid #01ab87;
+  font-size: 0;
 }
 .tab-menu li {
   display: inline-block;
   color: #01ab87;
+  font-size: 14px;
 }
 .tab-menu li.active {
   background-color: #01ab87;

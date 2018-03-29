@@ -242,13 +242,49 @@
 			<a class="btn btn-all btn-main" href="hmclient://shareWeApp">前往小程序报名</a>
 		</div>
 	</body>
+	<script type="text/javascript">
+		//如果是测试连接，显示刷新按钮
+		if(location.host == '192.168.1.176' && typeof VConsole != 'function') {
+			document.write("<script language=\"javascript\" src=\"http:\/\/192.168.1.176/hmsh-agent-web\/src\/main\/webapp\/mobile-new\/js\/vconsole.min.js\" > <\/script><script>var v = new VConsole();<\/script>");
+		//	if( document.getElementById('flexRefreshBtn')){
+		//		document.getElementById('flexRefreshBtn').style.display = 'block';		
+		//	}
+		}
+	</script>
 	<!--<script src="../../public/js/init.js" type="text/javascript" charset="utf-8"></script>-->
 	<script src="../../public/js/zepto/zepto.min.js" type="text/javascript" charset="utf-8"></script>
-	<script src="../../public/js/zepto/fx.js" type="text/javascript" charset="utf-8"></script>
-	<script src="../../public/js/zepto/fx_methods.js" type="text/javascript" charset="utf-8"></script>
+	<!--<script src="../../public/js/zepto/fx.js" type="text/javascript" charset="utf-8"></script>-->
+	<!--<script src="../../public/js/zepto/fx_methods.js" type="text/javascript" charset="utf-8"></script>-->
 	<script src="../shareHint/shareHitnt.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript">
 		$(function(){
+			//检测浏览器
+			window.browser = {
+				versions: function() {
+					var u = navigator.userAgent,
+						app = navigator.appVersion;
+					return {
+						trident: u.indexOf('Trident') > -1, //IE内核
+						ie: u.indexOf('Trident') > -1, //IE内核
+						presto: u.indexOf('Presto') > -1, //opera内核
+						webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+						gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+		
+						iPhone: u.indexOf('iPhone') > -1, //是否为iPhone或者QQHD浏览器
+						iPad: u.indexOf('iPad') > -1, //是否iPad
+						webApp: u.indexOf('Safari') == -1, //是否web应该程序，没有头部与底部
+		
+						mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+						android: u.indexOf('Android') > -1 || u.indexOf('Adr') > -1, //android终端
+						ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+						weixin: u.indexOf('MicroMessenger') > -1, //是否微信 （2015-01-22新增）
+						qqBrowser: u.indexOf('MQQBrowser') > -1,
+						qq: /QQ\/[\d\.]+/ig.test(u),
+						JLHM: /hmsh\s?\d?/ig.test(u)
+					};
+				}(),
+				language: (navigator.browserLanguage || navigator.language).toLowerCase()
+			};
 //			var $menu = $('.tab-menu'),
 //				$li  = $menu.find('li'),
 //				$container = $('.tab-container'),
@@ -275,22 +311,35 @@
 				$li  = $menu.find('li'),
 				$section = $('.section');
 				
-			$li.on('click',function (e) {
-				alterMenuActive( $(this) , 'clickli');
+			$li.children('a').on('click',function (e) {
+				e.preventDefault();
+//				alterMenuActive( $(this).parent('li') , 'clickA');
+				var top = $( $(this).attr('href') ).offset().top;
+				$(window).scrollTo( {toT : top} );
 			})
 			//当前menu外容器距离文档顶部的距离
 			var menutop = getMenuTop();
 			//记录各个需要判断mune对应section的offset.top和height
 			var sectionlen = 0;
 			var sectionint = 0;
-			var sectionArr = getSectionTop();
-			$(window).scroll(function (e) {
+			var sectionArr = getSectionTop(); 
+			
+			var eventstr = 'scroll';
+			if(browser.versions.ios&&browser.versions.JLHM){
+				eventstr = 'touchmove scroll';
+			}
+			judge();
+			$(window).on(eventstr,function (e) {
+				judge();
+			});
+			function judge() {
 				var top = $body.scrollTop();
+				//console.log(eventstr,top);
 				//顶部导航
 				top>menutop ? $menu.addClass('active') : $menu.removeClass('active');
 				//监听比较
-				judgeTop(top);
-			})
+				judgeTop(top);				
+			}
 			var settime = 300,
 				settimeout ;
 			
@@ -312,6 +361,9 @@
 				//用一个对象记录需要比较的$menuli及对应$section的top/height
 				var d = [];
 				var w = $(window).height();
+				//距离 目标元素触发距离 
+				var targettop = w/5;
+				var targettop = 20;
 				$li.children('a').each(function (i,e) {
 					var id = $(e).attr('href');
 					var $this = $(id);
@@ -322,7 +374,7 @@
 						$li:$(e).parent(),
 						active:$(e).parent().hasClass('active')
 					})
-					d[i].top = (d[i].top >= w/5) ? d[i].top - w/5 : 0; 
+					d[i].top = (d[i].top >= targettop) ? d[i].top - targettop : 0; 
 					d[i].max = parseInt(d[i].top + d[i].height);
 				});
 				sectionlen = d.length - 1;
@@ -333,20 +385,22 @@
 				//根据scroll事件获取的滚动条高度判断
 				var d = sectionArr[sectionint];
 				if(top>=d.top){
-					//滚动条高度大于比较元素顶部距离文档顶部距离
-					if(top <= d.top +d.height){
+					//滚动条高度大于目标元素顶部距离文档顶部距离
+					if(top <= d.max){
 						//在高度内
 						scrollAlterMenu(sectionint);
 						return false;
 					}else if(sectionint >= sectionlen){
-						//最后一个
+						//最后一个,就将.active标记到当前
+						scrollAlterMenu(sectionint);
 						return false;
 					}
 					//比较下一个
 					sectionint ++;
 					var d = sectionArr[sectionint];
 					if(top<d.top){
-						//滚动条高度 当前比较的$li 元素 后裔个兄弟元素 的顶部距离文档顶部的距离
+						//滚动条高度 < 目标元素 后一个兄弟元素 的顶部距离文档顶部的距离
+						scrollAlterMenu(sectionint-1);
 						return false;
 					}
 					judgeTop(top);
@@ -374,7 +428,40 @@
 						}
 						e.active =false;
 					});
-				}
+			}
+			$.fn.scrollTo =function(options){
+		        var defaults = {
+		            toT : 0,    //滚动目标位置
+		            durTime : 500,  //过渡动画时间
+		            delay : 30,     //定时器时间
+		            callback:null   //回调函数
+		        };
+		        var opts = $.extend(defaults,options),
+		            timer = null,
+		            _this = this,
+		            curTop = _this.scrollTop(),//滚动条当前的位置
+		            subTop = opts.toT - curTop,    //滚动条目标位置和当前位置的差值
+		            index = 0,
+		            dur = Math.round(opts.durTime / opts.delay),
+		            smoothScroll = function(t){
+		                index++;
+		                var per = Math.round(subTop/dur);
+		                if(index >= dur){
+		                    _this.scrollTop(t);
+		                    window.clearInterval(timer);
+		                    if(opts.callback && typeof opts.callback == 'function'){
+		                        opts.callback();
+		                    }
+		                    return;
+		                }else{
+		                    _this.scrollTop(curTop + index*per);
+		                }
+		            };
+		        timer = window.setInterval(function(){
+		            smoothScroll(opts.toT);
+		        }, opts.delay);
+		        return _this;
+		    };
 		})
 	</script>
 </html>
