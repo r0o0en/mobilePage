@@ -33,6 +33,17 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+body {
+  -moz-user-select: none;
+  /*火狐*/
+  -webkit-user-select: none;
+  /*webkit浏览器*/
+  -ms-user-select: none;
+  /*IE10*/
+  -khtml-user-select: none;
+  /*早期浏览器*/
+  user-select: none;
+}
 html,
 body {
   margin: 0;
@@ -76,11 +87,28 @@ textarea,
 a {
   outline: none;
 }
+input:disabled,
+button:disabled,
+select:disabled,
+textarea:disabled,
+a:disabled,
+input[disabled],
+button[disabled],
+select[disabled],
+textarea[disabled],
+a[disabled] {
+  opacity: 1;
+  -webkit-opacity: 1;
+  -webkit-text-fill-color: #999;
+  color: #999;
+  background-color: transparent;
+}
 a {
   text-decoration: none;
 }
 a,
-.btn {
+.btn,
+label {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -90,18 +118,24 @@ a,
 }
 a,
 .btn,
+label,
 a:focus,
 .btn:focus,
+label:focus,
 a:hover,
 .btn:hover,
+label:hover,
 a:active,
-.btn:active {
+.btn:active,
+label:active {
   outline: none;
 }
 a,
 .btn,
+label,
 a:active,
-.btn:active {
+.btn:active,
+label:active {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -moz-tap-highlight-color: rgba(0, 0, 0, 0);
   -ms-tap-highlight-color: rgba(0, 0, 0, 0);
