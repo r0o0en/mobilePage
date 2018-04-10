@@ -4,13 +4,11 @@
     <list default="true" id="a2f5fa1e-caed-4131-9fdc-39b21280b5b4" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/link.html" afterPath="$PROJECT_DIR$/link.html" />
-      <change beforePath="$PROJECT_DIR$/pages/greenhand/style/main.js" afterPath="$PROJECT_DIR$/pages/greenhand/style/main.js" />
-      <change beforePath="$PROJECT_DIR$/pages/program/clause_fujiayiwaizhuyuan2017.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/pages/program/clause_fujiazhongdajibing.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/pages/program/clause_tuantirenshengyiwai2016.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/pages/program/clause_yiwaishanghaibaoxianfujia2016.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/link2.html" afterPath="$PROJECT_DIR$/link2.html" />
+      <change beforePath="$PROJECT_DIR$/pages/buyVehicle/index.html" afterPath="$PROJECT_DIR$/pages/buyVehicle/index.html" />
       <change beforePath="$PROJECT_DIR$/pages/program/form.html" afterPath="$PROJECT_DIR$/pages/program/form.html" />
-      <change beforePath="$PROJECT_DIR$/pages/program/style/jquery.form.js" afterPath="$PROJECT_DIR$/pages/program/style/jquery.form.js" />
+      <change beforePath="$PROJECT_DIR$/public/js/modal/modal.css" afterPath="$PROJECT_DIR$/public/js/modal/modal.css" />
+      <change beforePath="$PROJECT_DIR$/public/js/modal/modal.less" afterPath="$PROJECT_DIR$/public/js/modal/modal.less" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -85,12 +83,6 @@
               <item name="mobilePage" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="mobilePage" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mobilePage" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="program" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -157,7 +149,7 @@
       <workItem from="1522461063561" duration="3076000" />
       <workItem from="1522648790281" duration="2253000" />
       <workItem from="1522808450017" duration="1877000" />
-      <workItem from="1523347308258" duration="580000" />
+      <workItem from="1523347308258" duration="2422000" />
     </task>
     <task id="LOCAL-00001" summary="iphoneX样式修复：viewport-fit解决iphoneX的“刘海”问题（全局搜索替换，部分没有替换到）">
       <created>1521622275262</created>
@@ -236,11 +228,18 @@
       <option name="project" value="LOCAL" />
       <updated>1522661409609</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="保险表单提交页对接接口">
+      <created>1523347905717</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1523347905717</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16198000" />
+    <option name="totallyTimeSpent" value="18040000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -258,7 +257,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38302502" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4352557" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -318,7 +317,8 @@
     <MESSAGE value="旧版保险页备份" />
     <MESSAGE value="旧版保险页" />
     <MESSAGE value="保险更新附属条款，表单提交页（还没有对接接口）" />
-    <option name="LAST_COMMIT_MESSAGE" value="保险更新附属条款，表单提交页（还没有对接接口）" />
+    <MESSAGE value="保险表单提交页对接接口" />
+    <option name="LAST_COMMIT_MESSAGE" value="保险表单提交页对接接口" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />

@@ -147,8 +147,10 @@
 		$(function(){
 			if(location.origin == "http://192.168.1.176"){
 				var url_reserve = 'http://192.168.1.182:8083/ins_order/save.do';
+				$('form').before('<a class="btn btn-green" onclick="testVal()">填充表单</a>');
 			}else if(/server=test/i.test(location.search)){//url后带参数?server=test
-				var url_reserve = 'http://admin.jlhmsh-test.com/'+'/ins_order/save.do';
+				var url_reserve = 'http://admin.jlhmsh-test.com/'+'ins_order/save.do';
+				$('form').before('<a class="btn btn-green" onclick="testVal()">填充表单</a>');
 			}else{
 				var url_reserve = 'http://back.jlhmsh.com'+'/ins_order/save.do';
 			}
@@ -292,6 +294,9 @@
 		       		number:parseInt($number.val())||1,//投保份数
 		       		beneficiary:$beneficiary.val(),//保险受益人
 		       		premium:parseInt($cost.val())||999,//保险费
+		       	},
+		       	beforeSend:function(){
+		       		loading();
 		       	},
 		       	success:function(data,status,xhr){
 		       		if(data.status == 10000){

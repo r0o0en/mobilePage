@@ -47,15 +47,25 @@
 				color: #fff;
 			}
 			section{
+				border-bottom:1px solid #ccc;
+				margin: 10px;
 				padding: 0.3rem;
 			}
 			h1{font-size: 0.42rem;padding: 0.2rem;margin-bottom: 0;line-height: 1;}
+			.border-wrapper{
+				padding: 10px;
+				border: 1px dashed #3399FF;	
+				-webkit-border-radius: 4px;
+				-moz-border-radius: 4px;
+				border-radius: 4px;
+			}
 		</style>
 	</head>
 	<body>
 		<section>
 			<header><h1>原link页面 </h1></header>
 			<a href='link2.html'>link2.html</a>
+			<p class="cl-red">所有连接未标注时，默认为本地地址：192.168.1.176</p>
 		</section>
 		
 		<section>
@@ -65,8 +75,21 @@
 		
 		<section>
 			<header><h1>保险<small>(pages/program/)</small> </h1></header>
-			<a href='pages/program/index.html'>保险介绍 + 分享微信按钮</a>
+			<a href='pages/program/index.html'>保险介绍</a>
 			<a href='pages/program/form.html'>表单提交页面</a>
+			<!--<hr />-->
+			<h3>http://dl.jlhmsh.com/mobilePage/</h3>
+			<a href='http://dl.jlhmsh.com/mobilePage/pages/program/index.html'>保险介绍</a>
+			<a href='http://dl.jlhmsh.com/mobilePage/pages/program/form.html'>表单提交页面</a>
+			<a href='http://dl.jlhmsh.com/mobilePage/pages/program/form.html?server=test'>表单提交页面-测试地址(url?server=test)</a>
+		</section>
+		
+		<section>
+			<header><h1>其他活动页<small></small> </h1></header>
+			<!--<hr />-->
+			<h3>购车宣传页<small>(pages/buyVehicle/)</small></h3>
+			<a href='pages/buyVehicle/index.html'>购车宣传页</a>
+			<a href='http://dl.jlhmsh.com/mobilePage/pages/buyVehicle/index.html'>购车宣传页(dl.jlhmsh.com)</a>
 		</section>
 		
 		<section>
