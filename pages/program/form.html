@@ -22,6 +22,7 @@
 		<link rel="stylesheet" type="text/css" href="../../public/css/init.css"/>
 		<link rel="stylesheet" type="text/css" href="../../public/css/btn.css"/>
 		<link rel="stylesheet" type="text/css" href="style/style.css"/>
+		<link rel="stylesheet" type="text/css" href="../../public/js/modal/modal.css"/>
 	</head>
 	<body class="" ontouchstart>
 		<img src="img/program.jpg" class="img-all" alt="吉粮团体保障计划会员权益"/>
@@ -54,6 +55,11 @@
 					职业：</label>
 				<input class="form-item-right" type="text" name="" id="job"  tabindex="5" autocomplete="off" required value="" placeholder=""/>
 			</div>
+			<div class="form-item">
+				<label class="form-item-left" for=""><span class="cl-red">*</span>
+					推荐人：</label>
+				<input class="form-item-right" type="text" name="" id="referee"  tabindex="5" autocomplete="off" required value="" placeholder="推荐人手机号码"/>
+			</div>
 			<div class="headline">
 				<p>默认不可更改</p>
 			</div>
@@ -80,7 +86,7 @@
 				<p class="form-item-left"><span class="cl-red">*</span>
 					保险受益人：</p>
 					<div class="form-item-right">
-						<input type="checkbox" name="beneficiary" id="beneficiaryDefault" checked value="本人" disabled/>
+						<input type="checkbox" name="beneficiary" id="beneficiary" checked value="法定受益人" disabled/>
 						<label for="" style="color: #999;">法定受益人</label>
 					</div>
 			</div>
@@ -89,11 +95,11 @@
 					保险费：</label>
 				<input class="form-item-right" type="text" name="" id="cost" value="999元" disabled/>
 			</div>
-			<div class="form-item">
+			<!--<div class="form-item">
 				<label class="form-item-left" for=""><span class="cl-red">*</span>
 					生效日期：</label>
 				<input class="form-item-right" type="text" name="" id="date" value="yyy-mm-dd"  disabled/>
-			</div>
+			</div>-->
 			
 			<!--<div class="form-item">
 				<p class="form-item-left"><span class="cl-red">*</span>
@@ -116,28 +122,37 @@
 				<a class="link-a" href="clause/occupational-classification.html">《职业分类》</a>
 			</p>
 			<p>				
-				<button class="btn btn-all btn-main btn-submit" > 立即报名 </button>				
+				<button class="btn btn-all btn-main btn-submit" > 提交订单 </button>				
 			</p>
 		</form>
 	</body>
 	<script type="text/javascript">
-		//如果是测试连接，显示刷新按钮
+		//如果是测试连接
 		if(location.host == '192.168.1.176' && typeof VConsole != 'function') {
-//			document.write("<script language=\"javascript\" src=\"http:\/\/192.168.1.176/hmsh-agent-web\/src\/main\/webapp\/mobile-new\/js\/vconsole.min.js\" > <\/script><script>var v = new VConsole();<\/script>");
+			document.write("<script language=\"javascript\" src=\"http:\/\/192.168.1.176/hmsh-agent-web\/src\/main\/webapp\/mobile-new\/js\/vconsole.min.js\" > <\/script><script>var v = new VConsole();<\/script>");
 		}
 	</script>
 	<script src="../../public/js/zepto/zepto.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="style/jquery.form.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../public/js/modal/modal.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript">
-		function testTrigger() {
-			alert('1');
-			$('#username').trigger('focus');
-		}
-		function testFocus() {
-			alert('2');
-			$('#username').focus();
-		}
+		function testVal() {
+		       			$('#username').val('ze');//姓名
+			       		$('#idnumber').val('362513158846644');//身份证
+			       		$('#tel').val('15997111111');//手机号码
+			       		$('#email').val('8150546@qq.com');//电子邮件
+			       		$('#job').val('it');//职业
+			       		$('#referee').val('15899222222');//推荐人手机号
+		       }
 		$(function(){
+			if(location.origin == "http://192.168.1.176"){
+				var url_reserve = 'http://192.168.1.182:8083/ins_order/save.do';
+			}else if(/server=test/i.test(location.search)){//url后带参数?server=test
+				var url_reserve = 'http://admin.jlhmsh-test.com/'+'/ins_order/save.do';
+			}else{
+				var url_reserve = 'http://back.jlhmsh.com'+'/ins_order/save.do';
+			}
+			console.log(url_reserve);
 			/*
 			new Date(1511228236874).format('yyyy-MM-dd hh:mm:ss')
 			* */
@@ -205,10 +220,24 @@
 				inputDispoce(_this,judge);
 				delete _this;
 			})
+			//推荐人
+			$referee = $('#referee').watch(function (e) {
+				var _this = $(this);
+				//判断
+				var judge = reg.phone.test( _this.val() );
+				inputDispoce(_this,judge);
+				delete _this;
+			})
 			//被保险人
 			$policy = $('#policyHolder');
+			//投保份数
+			$number = $('#number');
+			//保险受益人
+			$beneficiary = $('#beneficiary');
+			//保险费
+			$cost = $('#cost');
 			//生效日期
-			var $date = $('#date').val(new Date().format('yyyy-MM-dd'));
+//			var $date = $('#date').val(new Date().format('yyyy-MM-dd'));
 			//确定协议
 			var $consent = $('#clauseConsent');
 			//提交按钮
@@ -237,17 +266,55 @@
 		        }else if(!reg.email.test($email.val())){
 		        	JudegFormError($email,'邮箱不符合规范');
 		        	return false;
-		        }else if(!reg.chineseName.test($job.val())){
+		        }else if(!reg.name.test($job.val())){
 		        	JudegFormError($job,'职业不符合规范');
 		        	return false;
 		        }else if(!$consent.prop('checked')){
 		        	JudegFormError($consent,'未确认条款');
 		        	return false;
+		        }else if($referee.val().length>0 && !reg.phone.test($referee.val())){
+		        	JudegFormError($referee,'推荐人手机号不符合');
+		        	return false;
 		        }
 		        /*ajax*/
+		       $.ajax({
+		       	type:"post",
+		       	url:url_reserve,
+		       	dataType:'json',
+		       	data:{
+		       		name:$username.val(),//姓名
+		       		idCard:$idnumber.val(),//身份证
+		       		phone:$tel.val(),//手机号码
+		       		email:$email.val(),//电子邮件
+		       		occupation:$job.val(),//职业
+		       		referee:$referee.val(),//推荐人手机号
+		       		insurant:$policy.val(),//被保险人
+		       		number:parseInt($number.val())||1,//投保份数
+		       		beneficiary:$beneficiary.val(),//保险受益人
+		       		premium:parseInt($cost.val())||999,//保险费
+		       	},
+		       	success:function(data,status,xhr){
+		       		if(data.status == 10000){
+		       			modal('恭喜，'+data.info+'！');
+		       			setTimeout(function () {
+		       				location.replace('index.html');
+		       			},500)
+		       		}else{
+		       			modal(data.info);
+		       		}
+		       	},
+		       	complete:function (xhr,status) {
+		       		
+		       	},
+		       	error:function(xhr,status,errorText){
+		       		modal('error:'+errorText);
+		       	}
+				
+		       });
 			}
 			function JudegFormError($input,text) {
 		        $input.trigger('focus').parent().addClass('error');
+		        modal(text);
 			}
 			//单个input公共处理
 			function inputDispoce($input,judge) {

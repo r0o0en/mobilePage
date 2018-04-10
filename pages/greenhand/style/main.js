@@ -217,7 +217,7 @@ $.fn.inputJudge = function(reg, data) {
 	}
 };
 $.fn.inputjudgePhone = function() {
-	var reg_tel = /^1[3|4|5|7|8][0-9]\d{8}$/i;
+	var reg_tel = /^((0\d{2,3}-\d{7,8})|(1([358][0-9]|4[579]|66|7[0135678]|9[89])[0-9]{8}))$/;
 	return this.inputJudge(reg_tel, {
 		title: '手机账号',
 		info: "账号应为11号手机号码",
