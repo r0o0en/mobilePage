@@ -1,0 +1,102 @@
+/*
+<div id="wrapper" class="scroll-wrapper">
+    <div class="scroll-box">
+        <div id="pulldown">
+            <div><span id="pulldown-label">下拉刷新</span></div>
+        </div>
+        <ul id="listContBox" class="content ">
+        </ul>
+        <div id="pullup">
+            <div><span id="pullup-label">上拉加载</span></div>
+        </div>
+    </div> 
+</div>
+ * */
+#wrapper{
+    
+}
+.scroll-wrapper{
+    background-color: white;
+}
+.scroll-wrapper-fixed{
+    position: fixed;z-index: 1;
+    top: 0;bottom: 0;
+    left: 0;right: 0;
+}
+
+.scroll-box{
+    overflow: hidden;
+    -webkit-margin-before: 0em;
+}
+
+/****** 下拉刷新、上拉加载更多的样式********/
+#pulldown-label,
+#pullup-label{
+    display: inline-block; position: relative;
+}
+#pulldown-label:after,
+#pullup-label:after{
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: -30px;
+    top: 9px;
+    background: #ff6600;
+}
+#pulldown,
+#pullup {
+    background:#fff;
+    height:41px;
+    line-height:40px;
+//  padding:5px 10px;
+    border-bottom:1px solid #ccc;
+    font-size:14px;
+    color:#888;
+    text-align: center;
+    overflow: hidden;
+    span{
+        height: 40px;
+    }
+}
+
+#pulldown #pulldown-label:after,
+#pullup #pullup-label:after{
+    background:url(pull-icons.png) 0 0 no-repeat;
+    -webkit-background-size:20px auto; background-size:20px auto;
+    -webkit-transition-property:-webkit-transform;
+    -webkit-transition-duration:250ms;  
+}
+
+#pulldown #pulldown-label:after {
+    -webkit-transform:rotate(0deg) translateZ(0);
+}
+
+#pullup #pullup-label:after{
+    -webkit-transform:rotate(-180deg) translateZ(0);
+}
+
+#pulldown.flip #pulldown-label:after{
+    -webkit-transform:rotate(-180deg) translateZ(0);
+}
+
+#pullup.flip #pullup-label:after{
+    -webkit-transform:rotate(0deg) translateZ(0);
+}
+
+#pulldown.loading #pulldown-label:after,
+#pullup.loading #pullup-label:after{
+    background-position:0 100%;
+    -webkit-transform:rotate(0deg) translateZ(0);
+    -webkit-transition-duration:0ms;
+
+    -webkit-animation-name:loading;
+    -webkit-animation-duration:2s;
+    -webkit-animation-iteration-count:infinite;
+    -webkit-animation-timing-function:linear;
+}
+@-webkit-keyframes loading {
+    from { -webkit-transform:rotate(0deg) translateZ(0); }
+    to { -webkit-transform:rotate(360deg) translateZ(0); }
+}

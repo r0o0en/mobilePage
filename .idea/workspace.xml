@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a2f5fa1e-caed-4131-9fdc-39b21280b5b4" name="Default" comment="1、购车宣传页(pages/buyVehicle/)更新内容&#10;2、保险表单提交页测试接口修正，增加测试环境下表单内容填充按钮">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/link.html" afterPath="$PROJECT_DIR$/link.html" />
-      <change beforePath="$PROJECT_DIR$/pages/buyVehicle/img/cart01.jpg" afterPath="$PROJECT_DIR$/pages/buyVehicle/img/cart01.jpg" />
-      <change beforePath="$PROJECT_DIR$/public/css/btn.css" afterPath="$PROJECT_DIR$/public/css/btn.css" />
-      <change beforePath="$PROJECT_DIR$/public/css/btn.less" afterPath="$PROJECT_DIR$/public/css/btn.less" />
-      <change beforePath="$PROJECT_DIR$/public/css/init.css" afterPath="$PROJECT_DIR$/public/css/init.css" />
-      <change beforePath="$PROJECT_DIR$/public/css/init.less" afterPath="$PROJECT_DIR$/public/css/init.less" />
-    </list>
-    <list id="b0115110-eb0c-4bb9-ba70-5d6554e2ed1a" name="program" comment="">
+    <list default="true" id="a2f5fa1e-caed-4131-9fdc-39b21280b5b4" name="Default" comment="">
       <change beforePath="" afterPath="$PROJECT_DIR$/pages/program/order.html" />
       <change beforePath="" afterPath="$PROJECT_DIR$/pages/program/payment.html" />
       <change beforePath="" afterPath="$PROJECT_DIR$/pages/program/style/cookies.js" />
@@ -26,12 +17,14 @@
       <change beforePath="" afterPath="$PROJECT_DIR$/pages/program/style/scroll/scroll.less" />
       <change beforePath="" afterPath="$PROJECT_DIR$/pages/program/style/scroll/underscore.js" />
       <change beforePath="" afterPath="$PROJECT_DIR$/pages/program/test/order-list.json" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/pages/program/form.html" afterPath="$PROJECT_DIR$/pages/program/form.html" />
       <change beforePath="$PROJECT_DIR$/pages/program/index.html" afterPath="$PROJECT_DIR$/pages/program/index.html" />
       <change beforePath="$PROJECT_DIR$/pages/program/style/jquery.form.js" afterPath="$PROJECT_DIR$/pages/program/style/jquery.form.js" />
       <change beforePath="$PROJECT_DIR$/pages/program/style/style.css" afterPath="$PROJECT_DIR$/pages/program/style/style.css" />
       <change beforePath="$PROJECT_DIR$/pages/program/style/style.less" afterPath="$PROJECT_DIR$/pages/program/style/style.less" />
     </list>
+    <list id="b0115110-eb0c-4bb9-ba70-5d6554e2ed1a" name="program" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -179,7 +172,7 @@
       <workItem from="1523927876983" duration="14907000" />
       <workItem from="1524101233071" duration="1135000" />
       <workItem from="1524127736515" duration="5000" />
-      <workItem from="1524714237376" duration="243000" />
+      <workItem from="1524714237376" duration="351000" />
     </task>
     <task id="LOCAL-00001" summary="iphoneX样式修复：viewport-fit解决iphoneX的“刘海”问题（全局搜索替换，部分没有替换到）">
       <created>1521622275262</created>
@@ -272,11 +265,25 @@
       <option name="project" value="LOCAL" />
       <updated>1523352457528</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="1、惠有车图片修改&#10;2、public公共修改，link 页修改">
+      <created>1524714552844</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1524714552844</updated>
+    </task>
+    <task id="LOCAL-00015" summary="惠有房">
+      <created>1524714579139</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1524714579139</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35822000" />
+    <option name="totallyTimeSpent" value="35930000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -376,7 +383,9 @@
     <MESSAGE value="保险更新附属条款，表单提交页（还没有对接接口）" />
     <MESSAGE value="保险表单提交页对接接口" />
     <MESSAGE value="1、购车宣传页(pages/buyVehicle/)更新内容&#10;2、保险表单提交页测试接口修正，增加测试环境下表单内容填充按钮" />
-    <option name="LAST_COMMIT_MESSAGE" value="1、购车宣传页(pages/buyVehicle/)更新内容&#10;2、保险表单提交页测试接口修正，增加测试环境下表单内容填充按钮" />
+    <MESSAGE value="1、惠有车图片修改&#10;2、public公共修改，link 页修改" />
+    <MESSAGE value="惠有房" />
+    <option name="LAST_COMMIT_MESSAGE" value="惠有房" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -529,13 +538,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -592,6 +594,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="75" column="17" lean-forward="true" selection-start-line="75" selection-start-column="17" selection-end-line="75" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

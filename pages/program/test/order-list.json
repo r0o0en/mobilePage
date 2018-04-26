@@ -1,0 +1,53 @@
+{
+	"code": 200,
+	"msg": "操作成功",
+	"data": [
+	   {
+			"name": "ze",
+			"idCard": "362531199300000036",
+			"phone": "15997441111",
+			"email": "www@www.com",
+			"occupation": "职业",
+			"referee": "15997444444",
+			"refereeId": "122",
+			"insurant": "aze",
+			"number": "1份",
+			"beneficiary": "法定受益人",
+			"premium": 999.00,
+			"date": "以保险公司正式存档时间为准"
+
+		},
+		{
+			"name": "ze2",
+			"idCard": "362531199300000036",
+			"phone": "15997441111",
+			"email": "www@www.com",
+			"occupation": "职业",
+			"referee": "15997444444",
+			"refereeId": "122",
+			"insurant": "aze",
+			"number": "1份",
+			"beneficiary": "法定受益人",
+			"premium": 999.00,
+			"date": "以保险公司正式存档时间为准"
+
+		},
+		{
+			"name": "ze3",
+			"idCard": "362531199300000036",
+			"phone": "15997441111",
+			"email": "www@www.com",
+			"occupation": "职业",
+			"referee": "15997444444",
+			"refereeId": "122",
+			"insurant": "aze",
+			"number": "1份",
+			"beneficiary": "法定受益人",
+			"premium": 999.00,
+			"date": "以保险公司正式存档时间为准"
+
+		}
+
+	]
+
+}

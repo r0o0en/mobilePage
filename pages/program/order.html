@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html class="order">
+	<head>
+		<meta charset="utf-8" />
+		<title>我的订单-吉粮保险</title>
+		<meta name="author" content=""/>
+		<meta name="keywords" content="吉粮保险"/>
+		<meta name="description" content="吉粮保险,吉粮团意险"/>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv= "X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, minimal-ui, viewport-fit=cover">
+		<meta name="telephone=no" content="format-detection">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		
+		<meta name="charData" content="http://dl.jlhmsh.com/program/img/xiaochengxu-baoxian.png"/>
+		<meta name="params" content="title=吉粮保险&desc=吉粮团意险&path=pages/index/index&userName=gh_bebacf990e20&webpageUrl=http://back.jlhmsh.com/ppsh/login.html&hdImageData=http://img03.jlhmsh.com/201803/08/f52715ecbcf548ceb92e00b84ebaf548.jpg"/>
+		<!--<meta name="format-detection" content="telephone=no">
+		<meta http-equiv="x-rim-auto-match" content="none">
+		<meta http-equiv="Pragma" contect="no-cache">-->
+		
+		<link rel="stylesheet" type="text/css" href="../../public/css/init.css"/>
+		<link rel="stylesheet" type="text/css" href="../../public/css/btn.css"/>
+		<link rel="stylesheet" type="text/css" href="../../public/js/modal/modal.css"/>
+		<link rel="stylesheet" type="text/css" href="style/style.css"/>
+		<link rel="stylesheet" type="text/css" href="style/scroll/scroll.css"/>
+	</head>
+	<body class="" ontouchstart>
+		<script type="text/template" id="tpl">
+			<% for(var i=0;i<data.length;i++){ %>
+			<% var item=data[i];%>
+			<tr data-datas= <%= JSON.stringify(item)%>>
+				<td><%= item.name %></td>
+				<td><%= item.number %></td>
+				<td><%= item.premium %></td>
+				<td><%= payStatus[item.payStatus] %></td>
+			</tr>
+			<% } %>
+		</script>
+		
+		<script type="text/template" id="template-details">
+			<div class="btn btn-green btn-close" onclick="closeDetails()">返回列表</div>
+			<div class="headline">
+				<p>订单：<%= data.dmId %></p>
+			</div>
+			<% for(var i=0;i<details.length;i++){ %>
+			<% var item=details[i];%>
+			<% if( item.name ){ %>
+			<div class="form-item">
+				<label class="form-item-left" for=""><%= item.name %>：</label>
+				<% if( item.callback ){ %>
+				<input class="form-item-right" type="text" disabled value="<%= item.callback(data) %>"/>
+				<% }else { %>
+				<input class="form-item-right" type="text" disabled value="<%= data[item.key] %>"/>	
+				<% } %>
+			</div>
+			<% } %>
+			<% } %>
+
+		</script>
+		
+		
+			<div id="wrapper" class="scroll-wrapper scroll-wrapper-fixed">
+					<div class="scroll-box">
+						<div id="pulldown">
+							<div><span id="pulldown-label">下拉刷新</span></div>
+						</div>
+						<div class="content">
+							<table>
+								<thead>
+									<tr>
+										<th>商品名</th>
+										<th width="40">数量</th>
+										<th width="60">金额</th>
+										<th width="60">状态</th>
+									</tr>
+								</thead>
+								<tbody id="listContBox">
+									
+								</tbody>
+							</table>
+						</div>
+						<div id="pullup">
+							<div><span id="pullup-label">上拉加载</span></div>
+						</div>
+					</div>
+			</div>
+			
+			<div class="order-details" style="z-index: 9;">
+				<div class="headline">
+					<p>订单：9855625855198556258551</p>
+				</div>
+				<div class="form-item">
+					<label class="form-item-left" for=""><span class="cl-red">*</span>
+						姓名：</label>
+					<input class="form-item-right" type="text" name="" id="username" tabindex="1" autocomplete="off" required value="" placeholder="中、英文"/>
+				</div>
+			</div>
+	</body>
+	<script type="text/javascript">
+		//如果是测试连接
+		if(location.host == '192.168.1.176' && typeof VConsole != 'function') {
+//			document.write("<script language=\"javascript\" src=\"http:\/\/192.168.1.176/hmsh-agent-web\/src\/main\/webapp\/mobile-new\/js\/vconsole.min.js\" > <\/script><script>var v = new VConsole();<\/script>");
+		}
+	</script>
+	<script src="../../public/js/zepto/zepto.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../public/js/modal/modal.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script src="style/cookies.js" type="text/javascript" charset="utf-8"></script>
+	<script src="style/init.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script src="style/scroll/iscroll5-min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="style/scroll/iscrollAssist.js" type="text/javascript" charset="utf-8"></script>
+	<script src="style/scroll/underscore.js" type="text/javascript" charset="utf-8"></script>
+	<script src="style/scroll/paging.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script type="text/javascript">
+		var isHandle =  ['已处理','未处理'];
+		var payStatus = ['已付款','未付款'];
+		//显示详情时，按顺序渲染
+		var details = [
+			//{name:'保险类型',key:'insuranceFeeKey',},
+			{name:'姓名',key:'name',},
+			{name:'身份证',key:'idCard',},
+			{name:'手机号',key:'phone',},
+			{name:'邮箱',key:'email',},
+			{name:'职业',key:'occupation',},
+			{name:'保险专员',key:'referee',},
+			{name:'专员ID',key:'refereeId',},
+			{name:'被保险人',key:'insurant',},
+			{name:'份数',key:'number',},
+			{name:'受益人',key:'beneficiary',},
+			{name:'下单日期',key:'crtime',},
+			{name:'付款状态',key:'payStatus',callback:function(data){return payStatus[data['payStatus']]}},
+			{name:'处理状态',key:'isHandle',callback:function(data){return isHandle[data['isHandle']]}},
+		];
+		$(function () {
+			//商品列表
+			var url_getOrderList = "./test/order-list.json";
+			var ops = {
+				wrapper: $("#wrapper"),
+				listContBox: $('#listContBox'),
+				tpl: $('#tpl').html(),
+				url: URLS.getOrderList,
+			}
+			var listObj = list.init(ops);
+			
+			
+			
+			/*商品详情*/
+			var $details = $('.order-details');
+			var tplDetails = $('#template-details').html();
+			var tplDetailsParse = _.template(tplDetails);
+			$('#listContBox').on("click",'tr',function (e) {
+				var _this = $(this);
+				var datas = _this.attr('data-datas');
+				try{
+					datas = JSON.parse(datas);
+					console.log(datas);
+					$details.show();
+					$details.empty().append(tplDetailsParse({data:datas}));
+				}catch(e){
+					//TODO handle the exception
+					modal('查看订单详情失败');
+				}
+			})
+			/*商品详情 关闭按钮*/
+			closeDetails = function () {
+				$details.hide();
+			}
+		});
+	</script>
+</html>
