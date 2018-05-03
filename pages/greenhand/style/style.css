@@ -33,6 +33,19 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+a,
+button,
+.btn {
+  -moz-user-select: none;
+  /*火狐*/
+  -webkit-user-select: none;
+  /*webkit浏览器*/
+  -ms-user-select: none;
+  /*IE10*/
+  -khtml-user-select: none;
+  /*早期浏览器*/
+  user-select: none;
+}
 html,
 body {
   margin: 0;
@@ -76,11 +89,28 @@ textarea,
 a {
   outline: none;
 }
+input:disabled,
+button:disabled,
+select:disabled,
+textarea:disabled,
+a:disabled,
+input[disabled],
+button[disabled],
+select[disabled],
+textarea[disabled],
+a[disabled] {
+  opacity: 1;
+  -webkit-opacity: 1;
+  -webkit-text-fill-color: #999;
+  color: #999;
+  background-color: transparent;
+}
 a {
   text-decoration: none;
 }
 a,
-.btn {
+.btn,
+label {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -90,18 +120,24 @@ a,
 }
 a,
 .btn,
+label,
 a:focus,
 .btn:focus,
+label:focus,
 a:hover,
 .btn:hover,
+label:hover,
 a:active,
-.btn:active {
+.btn:active,
+label:active {
   outline: none;
 }
 a,
 .btn,
+label,
 a:active,
-.btn:active {
+.btn:active,
+label:active {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -moz-tap-highlight-color: rgba(0, 0, 0, 0);
   -ms-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -218,8 +254,23 @@ img {
 /*
  文本排列
  * */
-.text-cenner {
+.text-cenner,
+.text-center {
   text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.over-hide {
+  overflow: hidden;
+}
+.text-over-hide {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 /*
  背景
@@ -244,6 +295,9 @@ img {
 }
 .cl-red {
   color: #FF0000;
+}
+.cl-blue {
+  color: #3399FF;
 }
 /*
  下划线、模拟下划线
@@ -316,6 +370,13 @@ img {
 }
 .btn-orange:active {
   background-color: #ee7019;
+}
+.btn-red {
+  color: white;
+  background-color: #ff4211;
+}
+.btn-red:active {
+  background-color: #c31a13;
 }
 .bg-purple {
   background-color: #8742e3;
@@ -433,4 +494,22 @@ body.active .home2 {
 }
 body.active .success {
   display: block;
+}
+/*  noob */
+img {
+  display: block;
+  border: none;
+  max-width: 100%;
+  width: auto;
+  margin: 0 auto;
+}
+.img-all {
+  display: block;
+  width: 100%;
+}
+.white-card {
+  background-color: white;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
 }

@@ -9,7 +9,6 @@ if(typeof VConsole != 'function') {
 		document.write("<script language=\"javascript\" src=\"http:\/\/hs1006.22ip.net:5555\/hmsh-agent-web\/src\/main\/webapp\/mobile-new\/js\/vconsole.min.js\" > <\/script><script>var v = new VConsole();<\/script>");
 	}
 }
-
 $('.fixed-btn').on('click',function (e) {
 	e.preventDefault();
 	location.replace(this.getAttribute('href'));

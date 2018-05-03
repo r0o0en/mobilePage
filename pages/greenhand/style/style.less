@@ -41,6 +41,13 @@ img{
         background-color: #ee7019;    
     }
 }
+.btn-red{
+    color: white;
+    background-color: #ff4211;
+    &:active{
+        background-color: #c31a13;    
+    }
+}
 .bg-purple{
     background-color: #8742e3;
 }
@@ -152,4 +159,27 @@ body.active{
     background-color: #f4c100;
     .home,.home2{display: none;}
     .success{display: block;}
+}
+
+
+
+/*  noob */
+img {
+    display: block;
+    border: none;
+    max-width: 100%;
+    width: auto;
+    margin: 0 auto;
+}
+
+.img-all {
+    display: block;
+    width: 100%;
+}
+.white-card {
+    @radius: 4px;
+    background-color: white;
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    border-radius: @radius;
 }
