@@ -26,14 +26,24 @@
 		<link rel="stylesheet" type="text/css" href="style/scroll/scroll.css"/>
 	</head>
 	<body class="" ontouchstart>
+		<a class="fixed fixed-btn btn btn-green" href="index.html">前往首页</a>
 		<script type="text/template" id="tpl">
 			<% for(var i=0;i<data.length;i++){ %>
 			<% var item=data[i];%>
 			<tr data-datas= <%= JSON.stringify(item)%>>
 				<td><%= item.name %></td>
-				<td><%= item.number %></td>
-				<td><%= item.premium %></td>
-				<td><%= payStatus[item.payStatus] %></td>
+				<td><%= item.phone %></td>
+				<td>
+				<% if( item.payStatus === 1){%>
+					<!--未付款：取消、去付款-->
+					<a class="btn btn-blue btn-payment" href="<%= URLS.getPushOrder + '?orderId='+ item.dmId %>">付款</a>
+					<a class="btn btn-cancel" data-orderId="<%= item.dmId %>">取消</a>
+				<% }else if( item.payStatus === 2){ %>
+					<%= payStatus[item.payStatus] %>
+				<% }else{ %>
+					<%= isHandle[item.isHandle] %>
+				<% } %>
+				</td>
 			</tr>
 			<% } %>
 		</script>
@@ -69,10 +79,9 @@
 							<table>
 								<thead>
 									<tr>
-										<th>商品名</th>
-										<th width="40">数量</th>
-										<th width="60">金额</th>
-										<th width="60">状态</th>
+										<th>姓名</th>
+										<th>手机</th>
+										<th>进度</th>
 									</tr>
 								</thead>
 								<tbody id="listContBox">
@@ -97,12 +106,7 @@
 				</div>
 			</div>
 	</body>
-	<script type="text/javascript">
-		//如果是测试连接
-		if(location.host == '192.168.1.176' && typeof VConsole != 'function') {
-//			document.write("<script language=\"javascript\" src=\"http:\/\/192.168.1.176/hmsh-agent-web\/src\/main\/webapp\/mobile-new\/js\/vconsole.min.js\" > <\/script><script>var v = new VConsole();<\/script>");
-		}
-	</script>
+	
 	<script src="../../public/js/zepto/zepto.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="../../public/js/modal/modal.js" type="text/javascript" charset="utf-8"></script>
 	
@@ -116,7 +120,7 @@
 	
 	<script type="text/javascript">
 		var isHandle =  ['已处理','未处理'];
-		var payStatus = ['已付款','未付款'];
+		var payStatus = ['已付款','未付款','已取消'];
 		//显示详情时，按顺序渲染
 		var details = [
 			//{name:'保险类型',key:'insuranceFeeKey',},
@@ -152,9 +156,40 @@
 			var tplDetails = $('#template-details').html();
 			var tplDetailsParse = _.template(tplDetails);
 			$('#listContBox').on("click",'tr',function (e) {
-				var _this = $(this);
-				var datas = _this.attr('data-datas');
+				console.log(e);
+				var $this = $(this);
+				var $target = $(e.target || e.srcElement);
+				if($target.hasClass('btn')){
+					//如果是功能性按钮 .btn 触发
+					if($target.hasClass('btn-payment')){
+						console.log('去支付');
+						//去支付
+					}else if($target.hasClass('btn-cancel')){
+						e.preventDefault();
+						console.log($target.attr('data.orderId'));
+						var datas = $target.attr('data-orderId');
+						console.log('取消',datas);
+						//取消
+						ajax({
+							info:'取消订单',
+							needLogin:true,
+							infoSuccess:true,
+							url:URLS.postCancelOrder,
+							data:{
+								orderId:parseInt(datas),
+							},
+							success:function(data){
+								modal(data.data);
+								if(data.data=="取消成功"){
+									$this.remove();
+								}
+							}
+						})
+					}
+					return false;
+				}
 				try{
+					var datas = $this.attr('data-datas');
 					datas = JSON.parse(datas);
 					console.log(datas);
 					$details.show();
@@ -163,11 +198,17 @@
 					//TODO handle the exception
 					modal('查看订单详情失败');
 				}
-			})
+			});
 			/*商品详情 关闭按钮*/
 			closeDetails = function () {
 				$details.hide();
 			}
+			
+			/*功能按钮*/
+//			$('#listContBox').on('click','.btn',function (e) {
+//				e.stopPropagation();
+//				console.log(this,this.innerText);
+//			})
 		});
 	</script>
 </html>

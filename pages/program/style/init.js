@@ -1,4 +1,20 @@
 /*
+ * 如果是测试连接，显示 vconsole
+ * 
+ * */
+if(typeof VConsole != 'function') {
+	if( location.origin == 'http://192.168.1.176' ){
+		document.write("<script language=\"javascript\" src=\"http:\/\/192.168.1.176\/hmsh-agent-web\/src\/main\/webapp\/mobile-new\/js\/vconsole.min.js\" > <\/script><script>var v = new VConsole();<\/script>");		
+	}else if(location.origin == 'http://jlhmsh.vicp.io:5555'){		
+		document.write("<script language=\"javascript\" src=\"http:\/\/hs1006.22ip.net:5555\/hmsh-agent-web\/src\/main\/webapp\/mobile-new\/js\/vconsole.min.js\" > <\/script><script>var v = new VConsole();<\/script>");
+	}
+}
+
+$('.fixed-btn').on('click',function (e) {
+	e.preventDefault();
+	location.replace(this.getAttribute('href'));
+})
+/*
  * 读取token or 并存储
  * 
  * */
@@ -21,11 +37,20 @@ try{
 var SERVER = judgeServer();
 var URL = judgeUrl(SERVER);
 var URLS = judgeUrls(SERVER);
-
+$(function () {
+	console.log("location ", location);
+	console.log("location.origin = ", location.origin);
+	console.log('urlData.token = ',urlData.token);
+	console.log("SERVER = ", SERVER);
+	console.log("URL = ", URL);
+	console.log("URLS = ", URLS);	
+})
 function judgeServer(){
 	//获取当前环境
 	if(location.origin == "http://192.168.1.176") {
 		return 0;
+	}else if(location.origin == "http://jlhmsh.vicp.io:5555") {		
+		return 3;
 	} else if(/server=test/i.test(location.search)) { //url后带参数?server=test
 		return 1;
 	} else {
@@ -34,15 +59,17 @@ function judgeServer(){
 	return -1;
 }
 function judgeUrl(server){
-	return ["http://192.168.1.101:8080","http://admin.jlhmsh-test.com/","http://back.jlhmsh.com"][server];
+	return ["http://192.168.1.101:8080","http://admin.jlhmsh-test.com/","http://back.jlhmsh.com",'http://jlhmsh.vicp.io:8888'][server];
 }
 function judgeUrls(server){
 	//根据当前环境选择对应的接口
 	var local = {//某JAVA电脑本地接口
-		postSubmitOrder: URL +'/v1.0/insuranceFee/subOrder',
-		getInsuranceInfo: URL +'/v1.0/insuranceFee/getInsuranceFee',
-		getOrderList:URL + '/v1.0/insuranceFee/getUserOrderList',
-		pushOrder:URL + '/v1.0/insuranceFee/pushOrder',
+		postSubmitOrder: URL +'/v1.0/insuranceFee/subOrder',//提交订单
+		getInsuranceInfo: URL +'/v1.0/insuranceFee/getInsuranceFee',//保险信息
+		getOrderList:URL + '/v1.0/insuranceFee/getUserOrderList',//订单列表
+		getPushOrder:URL + '/v1.0/insuranceFee/pushOrder',//去支付
+		postJudgeReferee:URL + '/v1.0/insuranceFee/queryReferee',//验证保险专员
+		postCancelOrder:URL + '/v1.0/insuranceFee/cancelOrder',//取消订单
 	};
 	var test = $.extend(true, local, {//测试后台接口
 		
@@ -51,16 +78,16 @@ function judgeUrls(server){
 		
 	});
 	
-	return [local,test,official][server];
+	return [local,test,official,local][server];
 }
 
 /*
  * 判断 modal（）
  * 
  * */
-if(typeof modal != 'function'){
-	function modal(info,time) {alert(info);console.log(info,time);};
-}
+//if(typeof modal != 'function'){
+//	function modal(info,time) {alert(info);console.log(info,time);};
+//}
 /*
  * cookie
  * 
@@ -75,7 +102,8 @@ if(typeof Cookies == 'function'){ //Cookies 对象
 		_token = Cookies.get('token');
 	}
 }else{
-	modal('没有引入 Cookies.js');
+	console.warn('没有引入 Cookies.js');
+//	modal('没有引入 Cookies.js');
 }
 //cookies 参数
 var cookiesOptions = {
@@ -124,7 +152,7 @@ function toLoginPage() {//登录过期，2s自动跳转登录页/按钮立即跳
 	}, 1000);
 }
 function loginPage(){//跳转登录页
-	modal('跳转登录');
+	modal('跳转登录 or 登录命令');
 	location.href = 'hmclient://toLogin';
 }
 
@@ -161,6 +189,7 @@ function ajax(opt) {
 		}
 		//token写入ajax头部
 		var token = getToken();
+		console.log('ajax token = ',token);
 		if(token){
 			o.headers = $.extend({},{
 				token: token

@@ -5,7 +5,10 @@
 @main-padding:15px;
 @font-size-title:22px;
 @font-size-text:14px;
-
+.btn{
+    font-size: inherit;
+    padding: 0 5px;
+}
 .btn-main{
 //  -webkit-border-radius: 0;
 //  -moz-border-radius: 0;
@@ -74,7 +77,7 @@ p {
             display: inline-block;
             font-weight: 900;
             font-size: @font-size-title;
-            position: relative;
+            position: relative;z-index: 0;
             padding: 0 20px;
             margin-bottom: 0;
             &.no-bottom:before {
@@ -160,7 +163,7 @@ td {
 }
 
 .tab-menu{
-    position: relative;z-index: 9;
+    position: relative;z-index: 1;
     @height:40px;
 //  position: sticky;
 //  position: -webkit-sticky;
@@ -493,5 +496,59 @@ td {
         top: 17px ;
         right: 5px;
         padding: 0 5px;    
+    }
+}
+.fixed{
+    position: fixed;
+}
+.fixed-btn{
+    font-size: inherit;
+    top: 7px;
+    right: 10px;
+    z-index: 2;
+    padding: 0 5px;  
+}
+
+/* ========
+    支付结果 
+ * ========*/
+.pay-status{
+    background-color: #eee;
+    .pay-statu{
+        padding: @main-padding;
+        text-align: center;
+        img{
+            display: block;
+            border: none;
+            width: 100px;
+            margin:  0 auto;
+        }
+        strong{
+            font-size: 16px;
+            font-weight: 600;
+        }
+        .info{
+            color: #999;
+        }
+    }
+    .pay-success{
+        strong{
+            color: #009c3b;
+        }
+    }
+    .pay-error{
+        display: none;
+        strong{
+            color: #FF0000;
+        }
+    }
+    footer{
+        padding: 0 @main-padding;
+        margin: @main-padding auto;
+        .btn{
+            width: 100%;
+            font-size: inherit;
+            padding: 5px 10px ;
+        }
     }
 }

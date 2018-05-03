@@ -25,6 +25,7 @@
 		<link rel="stylesheet" type="text/css" href="../../public/js/modal/modal.css"/>
 	</head>
 	<body class="" ontouchstart>
+		<a class="fixed fixed-btn btn btn-green" href="order.html">我的订单</a>
 		<img src="img/program.jpg" class="img-all" alt="吉粮团体保障计划会员权益"/>
 		<form class="section">
 			<div class="headline">
@@ -56,7 +57,7 @@
 				<input class="form-item-right" type="text" name="" id="job"  tabindex="5" autocomplete="off" required value="" placeholder=""/>
 			</div>
 			<div class="form-item">
-				<label class="form-item-left" for=""><span class="cl-red"></span>
+				<label class="form-item-left" for=""><span class="cl-red">*</span>
 					保险专员：</label>
 				<input class="form-item-right" type="text" name="" id="referee"  tabindex="5" autocomplete="off" value="" placeholder="保险专员手机号码"/>
 				<input class="form-item-right" type="hidden" name="" id="refereeId" placeholder="保险专员验证Id"/>
@@ -119,35 +120,30 @@
 			</p>
 		</form>
 	</body>
-	<script type="text/javascript">
-		//如果是测试连接
-		if(location.host == '192.168.1.176' && typeof VConsole != 'function') {
-//			document.write("<script language=\"javascript\" src=\"http:\/\/192.168.1.176/hmsh-agent-web\/src\/main\/webapp\/mobile-new\/js\/vconsole.min.js\" > <\/script><script>var v = new VConsole();<\/script>");
-		}
-	</script>
+
 	<script src="../../public/js/zepto/zepto.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="../../public/js/modal/modal.js" type="text/javascript" charset="utf-8"></script>
 	
 	<script src="style/cookies.js" type="text/javascript" charset="utf-8"></script>
 	<script src="style/init.js" type="text/javascript" charset="utf-8"></script>
-	<!--<script src="style/jquery-ajax.js" type="text/javascript" charset="utf-8"></script>-->
 	<script src="style/jquery.form.js" type="text/javascript" charset="utf-8"></script>
-	
-	<script type="text/javascript">needLogin = false;
-		console.log(needLogin);
-		
-		function testVal() {
-			$('#username,#policyHolder').val('ze'); //姓名
-			$('#idnumber').val('362513158846644'); //身份证
-			$('#tel').val('15997111111'); //手机号码
-			$('#email').val('8150546@qq.com'); //电子邮件
-			$('#job').val('it'); //职业
-			$('#referee').val('15899222222'); //保险专员手机号
-		}
+
+	<script type="text/javascript">
+		needLogin = false;
 		
 		$(function() {
+			testVal = function () {
+				$('#username,#policyHolder').val('ze'); //姓名
+				$('#idnumber').val('362513158846644'); //身份证
+				$('#tel').val('15997111111'); //手机号码
+				$('#email').val('8150546@qq.com'); //电子邮件
+				$('#job').val('it'); //职业
+				$('#referee').val('15997448183'); //保险专员手机号
+				$('#refereeId').val('2510214861651968'); //保险专员手机号
+				judgeReferee= true;
+			}
 
-			if(SERVER === 0 || SERVER === 1) {//如果是本地或测试,显示填充按钮
+			if(SERVER === 0 || SERVER === 1 || SERVER === 3) {//如果是本地或测试,显示填充按钮
 				$('form').before('<a class="btn btn-green" onclick="testVal()">填充表单</a>');
 			}
 			/*获取保险参数*/
@@ -164,7 +160,7 @@
 			})
 			
 			//姓名
-			$username = $('#username').watch(function (e) {
+			var $username = $('#username').watch(function (e) {
 				var _this = $(this);
 				//判断
 				var judge = reg.name.test( _this.val() );
@@ -175,7 +171,7 @@
 				delete _this;
 			});
 			//身份证号
-			$idnumber = $('#idnumber').watch(function (e) {
+			var $idnumber = $('#idnumber').watch(function (e) {
 				var _this = $(this);
 				//判断
 				var judge = reg.idNumber.test( _this.val() );
@@ -183,7 +179,7 @@
 				delete _this;
 			})
 			//联系电话
-			$tel = $('#tel').watch(function (e) {
+			var $tel = $('#tel').watch(function (e) {
 				var _this = $(this);
 				//判断
 				var judge = reg.phone.test( _this.val() );
@@ -191,7 +187,7 @@
 				delete _this;
 			})
 			//电子邮箱
-			$email = $('#email').watch(function (e) {
+			var $email = $('#email').watch(function (e) {
 				var _this = $(this);
 				//判断
 				var judge = reg.email.test( _this.val() );
@@ -199,50 +195,71 @@
 				delete _this;
 			})
 			//职业
-			$job = $('#job').watch(function (e) {
+			var $job = $('#job').watch(function (e) {
 				var _this = $(this);
 				//判断
 				var judge = reg.name.test( _this.val() ); //使用name校检职业字符串
 				inputDispoce(_this,judge);
 				delete _this;
 			})
+			//保险专员Id
+			var $refereeId = $('#refereeId');
 			//保险专员
-			$referee = $('#referee').watch(function (e) {
+			var judgeReferee = false;
+			var $referee = $('#referee').watch(function (e) {
 				var _this = $(this);
 				//判断
-				var judge = reg.phone.test( _this.val() );
+				var judge = reg.phone.test( _this.val());
 				inputDispoce(_this,judge);
-				delete _this;
+				if(judge){//满足手机格式
+					if(judgeReferee==false){//且没有进行验证 or 前一次验证不成功
+						ajax({
+							info:'验证保险专员',
+							needLogin:false,
+							infosuccess:true,
+							url:URLS.postJudgeReferee,
+							data:{
+								phone:_this.val()
+							},
+							success:function(data){
+								if(data.data){
+									//如果保险专员有效
+									judgeReferee = true;
+									$refereeId.val(data.data.dmId);								
+									console.log('验证保险专员成功',judgeReferee,$refereeId.val());
+								}
+							}
+						})						
+					}
+				}else{
+					judgeReferee = false;
+					$refereeId.val('');
+				}
+				_this = null;
 			});
-			//保险专员Id
-			$refereeId = $('#refereeId');
 			//被保险人
-			$policy = $('#policyHolder');
+			var $policy = $('#policyHolder');
 			//投保份数
-			$number = $('#number');
+			var $number = $('#number');
 			//保险受益人
-			$beneficiary = $('#beneficiary');
+			var $beneficiary = $('#beneficiary');
 			//保险费
-			$cost = $('#cost');
+			var $cost = $('#cost');
 			//生效日期
 			var $date = $('#date');
 			//确定协议
 			var $consent = $('#clauseConsent');
 			//提交按钮
-			$submit = $('.btn-submit');
+			var $submit = $('.btn-submit');
 			
 			//提交事件
 			$('form').submit(function (e) {
 				e.preventDefault();
-				
 				judgeForm();
-				
 				return false;
 			})
-			
 			//提交全校验
 			function judgeForm() {
-				
 				//验证必填字段
 		        if(!reg.name.test($username.val())){
 		        	JudegFormError($username,'姓名不符合规范');
@@ -262,11 +279,11 @@
 		        }else if(!$consent.prop('checked')){
 		        	JudegFormError($consent,'未确认条款');
 		        	return false;
-		        }else if($referee.val().length>0 && !reg.phone.test($referee.val())){
-		        	JudegFormError($referee,'保险专员手机号不符合');
+		        }else if( !judgeReferee ){
+		        	JudegFormError($referee,'保险专员无效');
 		        	return false;
 		        }
-		        console.log({
+		        var data = {
 			       		insuranceFeeKey:insuranceInfo.key,
 			       		name:$username.val(),//姓名
 			       		idCard:$idnumber.val(),//身份证
@@ -274,13 +291,14 @@
 			       		email:$email.val(),//电子邮件
 			       		occupation:$job.val(),//职业
 			       		referee:$referee.val(),//保险专员手机号
-			       		refereeId:parseInt($referee.val()),//保险专员验证ID
+			       		refereeId:$refereeId.val(),//保险专员验证ID
 			       		insurant:$policy.val(),//被保险人
 			       		number:parseInt($number.val())||1,//投保份数
 			       		beneficiary:$beneficiary.val(),//保险受益人
 			       		//premium:parseInt($cost.val())||999,//保险费
 			       		date:$date.val(),//生效日期
-			       	});
+			    };
+		        console.log('表单提交的数据',data);
 		        /*ajax*/
 		       	ajax({
 					info:'提交保险订单',
@@ -288,39 +306,10 @@
 					needLogin:true,
 					contentType: "application/json",
 					url:URLS.postSubmitOrder,
-					data:JSON.stringify({
-			       		insuranceFeeKey:insuranceInfo.key,
-			       		name:$username.val(),//姓名
-			       		idCard:$idnumber.val(),//身份证
-			       		phone:$tel.val(),//手机号码
-			       		email:$email.val(),//电子邮件
-			       		occupation:$job.val(),//职业
-			       		referee:$referee.val(),//保险专员手机号
-			       		refereeId:parseInt($referee.val()),//保险专员验证ID
-			       		insurant:$policy.val(),//被保险人
-			       		number:parseInt($number.val())||1,//投保份数
-			       		beneficiary:$beneficiary.val(),//保险受益人
-			       		//premium:parseInt($cost.val())||999,//保险费
-			       		date:$date.val(),//生效日期
-			       	}),
+					data:JSON.stringify(data),
 					success:function(data){
-//						console.log(data);
 						var id = data.data.orderId;
-//						console.log(URLS.pushOrder + '?orderId=' + id);
-						location.href = URLS.pushOrder + '?orderId='+id;
-//						ajax({
-//							info:'请求支付',
-//							infosuccess:true,
-//							needLogin:true,
-//							type:'get',
-//							url:URLS.pushOrder,
-//							data:{
-//								orderId:id,
-//							},
-//							success:function(data){
-//								console.log(data);
-//							}
-//						})
+						location.href = URLS.getPushOrder + '?orderId='+id;
 					}
 				})
 		    }

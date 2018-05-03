@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html class="payment">
+<html class="pay-status">
 	<head>
 		<meta charset="utf-8" />
-		<title>收银台-吉粮保险</title>
+		<title>支付结果-吉粮保险</title>
 		<meta name="author" content=""/>
 		<meta name="keywords" content="吉粮保险"/>
 		<meta name="description" content="吉粮保险,吉粮团意险"/>
@@ -25,27 +25,64 @@
 		<link rel="stylesheet" type="text/css" href="../../public/js/modal/modal.css"/>
 	</head>
 	<body class="" ontouchstart>
-		<div class="flex bg-white padding-left-right">
-			<p class="padding-right">付款金额：</p>
-			<p class="flex-1 text-right color-red">￥100,000. <small>00</small></p>
+		<div class="pay-statu pay-success">
+			<img src="img/ico-success.png"/>
+			<p><strong>支付成功</strong></p>
+			<p class="info">5s 后自动返回订单列表页</p>
 		</div>
-		<div class="payment-type-wraper bg-white margin-top-bottom padding-top-bottom">
-			<header class="padding-left-right">支付方式：</header>
-			<div class="payment-type">
-				<div class="payment-type-item">
-					<i class="ico-radio"></i>
-					<p><img src="../buyHouse/img/zfb.png" alt="" />支付宝</p>
-				</div>
-				<div class="payment-type-item">
-					<i class="ico-radio"></i>
-					<p><img src="../buyHouse/img/kq_log.gif" alt="" />双乾支付</p>
-				</div>
-			</div>
+		<div class="pay-statu pay-error">
+			<img src="img/ico-error.png"/>
+			<p><strong>支付失败</strong></p>
+			<p class="info">5s 后自动返回订单列表页</p>
 		</div>
-		<button class="btn btn-main">前往支付</button>
+		
+		<footer>
+			<a class="btn btn-green" href="order.html">立即返回</a>			
+		</footer>
 	</body>
 	<script src="../../public/js/zepto/zepto.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../public/js/modal/modal.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script src="style/cookies.js" type="text/javascript" charset="utf-8"></script>
+	<script src="style/init.js" type="text/javascript" charset="utf-8"></script>
+	
 	<script type="text/javascript">
-		
+		needLogin = false;		
+		;(function(){
+			console.log(urlData);
+			var $pay = $('.pay-statu');
+			var $info =$pay.find('.info'),
+				time = 5;
+			payStatus(urlData.status);
+			
+			function payStatus (status) {
+				if(!status || status=='success'){
+					//支付成功
+					console.log('支付成功');
+				}else {
+					//支付失败
+					console.log('支付失败');
+					$pay.show().filter('.pay-success').hide();
+				}
+				autoReturn();
+			}
+			function autoReturn () {
+				$info.text(time+'s 后自动返回订单列表页');
+				if(time > 0){
+					time--;
+					setTimeout(autoReturn,1000);
+				}else{
+					time =5;
+					selfGoPage();
+				}
+			}
+			
+			function selfGoPage() {
+//				location.href = "order.html";
+//				location.replace('order.html');
+				return false;
+			}
+			
+		}());
 	</script>
 </html>

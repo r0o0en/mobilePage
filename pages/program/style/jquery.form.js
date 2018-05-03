@@ -1,7 +1,7 @@
 var reg = {
-	name:/^([\u4e00-\u9fa5]{2,}|[A-Za-z]{2,20})$/,//姓名(中、英文),至少两位
-	tel:/^((0\d{2,3}-\d{7,8})|(1([358][0-9]|4[579]|66|7[0135678]|9[89])[0-9]{8}))$/,//座机、手机号
-	phone:/^(1([358][0-9]|4[579]|66|7[0135678]|9[89])[0-9]{8})$/,//手机号
+	name:/^([\u4e00-\u9fa5]{2,20}|[A-Za-z]{2,20})$/,//姓名(中、英文),至少两位
+	tel:/^((0\d{2,3}-\d{7,8})|(1([358][0-9]|4[56789]|66|7[0135678]|9[89])[0-9]{8}))$/,//座机、手机号
+	phone:/^(1([358][0-9]|4[56789]|66|7[0135678]|9[89])[0-9]{8})$/,//手机号
 	email:/^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z0-9]{2,6}$/,//邮箱
 	idNumber:/(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/, //15、18位身份证号
 	chineseName:/^[\u4e00-\u9fa5]{2,20}$/,//中文姓名、两位以上纯中文
@@ -26,10 +26,7 @@ var reg = {
 	
 	$.fn.watch = function(callback) {
 		return this.on('keyup paste change',function (e) {
-//			console.log('evnet('+e.type+'):',e.key,e.code,e.keyCode);
-//			console.log('val() = ',$(this).val());
-			callback.apply(this,arguments);
-//			return false;
+			callback.apply(this,arguments);//callback = function(e){ this == input}
 		});
 	};
 	
@@ -56,60 +53,55 @@ var reg = {
 	 	示例
 	 * */
 	$.fn.watchVerify = function (_reg,callback) {
-		if(typeof this != 'object' || this.length<1){
-			console.warn(this,'this is not element Object or length<1');
-			return this ;
+		if(!this.isElementNode()){
+			console.warn(this,'target no has html element node');
+			return this;
 		}
-		var judge = true; // true:有_reg 和 callback ，false:只有callback ，两个都没有，就直接返回this
 		if(typeof _reg == 'undefined'){
+			//既沒有 RegExp 也沒有 callback
 			console.warn(this,'No callback function');
 			return this;
+		}else if(typeof _reg == 'function'){
+			//只有一个callback
+			return this.each(function (i,el) {
+				$(el).watch(_reg);
+			})
 		}else if( typeof _reg == 'object' && ( _reg instanceof RegExp) ){
+			//有正则表达式
 			if( typeof callback =='function' ){
-				judge = true;
+				//有回调
+				return this.each(function (i,el) {
+					$(el).watch(function (e) {
+						var _this = $(this);
+						//判断
+						var judge = _reg.test(_this.val() );
+						callback(_this,judge);
+						_this = null ;
+					})
+				})
 			}else{
+				//没有回调
 				console.warn(this,'callback is not function');
 				return this;								
 			}
-		}else if(typeof _reg == 'function'){
-			judge = false;	
-		}
-		
-		if(judge){
-			this.each(function (i,el) {
-				$(el).watch(function (e) {
-					var _this = $(this);
-					//判断
-					var judge = _reg.test( _this.val() );
-					callback(_this,judge);
-					delete _this;
-				})
-			})
-		}else{
-			this.each(function (i,el) {
-				$(el).watch(function (e) {
-					var _this = $(this);
-					callback(_this);
-					delete _this;
-				})
-			})
 		}
 		
 		return this ;
 	}
 	
-	function name($element){
-		if(typeof $element != 'object'){
-			console.warn('$element is not element object');
-			
+	$.fn.isElementNode = typeof $.fn.isElementNode == 'function' ? $.fn.isElementNode :  function () {
+		//检测一个 jquery对象中是否是 是 html element node  
+		if(typeof this != 'object'){
+			console.warn('this is not element object');
 			return false;
-		}else if($element.length<1){
-			console.warn('$element length < 1');
+		}else if(this.length<1){
+			console.warn('this length < 1');
 			return false;
-		}else if($element.get(0).nodeType !== 1){
-			console.warn("$element no't htmlNode");
+		}else if(this.get(0).nodeType !== 1){
+			console.warn("this no't html node");
 			return false;
 		}
-	}
+		return true;
+	};
 	
 }(typeof jQuery =='function' ? jQuery : typeof Zepto =='function' ? Zepto : false ));

@@ -26,6 +26,7 @@
 		<link rel="stylesheet" type="text/css" href="style/style.css"/>
 	</head>
 	<body class="">
+		<a class="fixed fixed-btn btn btn-green" href="order.html">我的订单</a>
 		<img src="img/program.jpg" class="img-all" alt="吉粮团体保障计划会员权益"/>
 		<menu class="tab-menu">
 			<ul>
@@ -273,25 +274,21 @@
 			<a class="btn btn-all btn-main "  href="hmclient://toLogin">测试登录</a>
 		</p>
 	</body>
-	<script type="text/javascript">
-		//如果是测试连接，显示刷新按钮
-		if(location.host == '192.168.1.176' && typeof VConsole != 'function') {
-			document.write("<script language=\"javascript\" src=\"http:\/\/192.168.1.176/hmsh-agent-web\/src\/main\/webapp\/mobile-new\/js\/vconsole.min.js\" > <\/script><script>var v = new VConsole();<\/script>");
-		}
-	</script>
-	
+
 	<script src="../../public/js/zepto/zepto.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="../../public/js/modal/modal.js" type="text/javascript" charset="utf-8"></script>
 	
 	<script src="style/cookies.js" type="text/javascript" charset="utf-8"></script>
 	<script src="style/init.js" type="text/javascript" charset="utf-8"></script>
+	
 	<script type="text/javascript">
 		$(function(){
-			console.log(urlData.token)
-			//前往下单页
+			//前往下单页 or 登录
 			$('.to-order').on('click',function (e) {
 				try{
-					if( getToken('token') ){
+					if(urlData.token) {
+						setToken(urlData.token);
+					//}else if( getToken('token') ){
 						//下一步
 					}else{
 						e.preventDefault();	
