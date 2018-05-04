@@ -119,7 +119,7 @@
 	<script src="style/scroll/paging.js" type="text/javascript" charset="utf-8"></script>
 	
 	<script type="text/javascript">
-		var isHandle =  ['已处理','未处理'];
+		var isHandle =  ['已处理','待处理'];
 		var payStatus = ['已付款','未付款','已取消'];
 		//显示详情时，按顺序渲染
 		var details = [
@@ -134,7 +134,7 @@
 			{name:'被保险人',key:'insurant',},
 			{name:'份数',key:'number',},
 			{name:'受益人',key:'beneficiary',},
-			{name:'下单日期',key:'crtime',},
+			{name:'提交日期',key:'crtime',callback:function(data){return new Date(data['crtime']).format('yyyy-MM-dd hh:mm:ss')}},
 			{name:'付款状态',key:'payStatus',callback:function(data){return payStatus[data['payStatus']]}},
 			{name:'处理状态',key:'isHandle',callback:function(data){return isHandle[data['isHandle']]}},
 		];
@@ -177,7 +177,7 @@
 							infoSuccess:true,
 							url:URLS.postCancelOrder,
 							data:{
-								orderId:parseInt(datas),
+								orderId:datas,
 							},
 							success:function(data){
 								modal(data.data);

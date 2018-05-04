@@ -48,17 +48,18 @@ function judgeServer(){
 	//获取当前环境
 	if(location.origin == "http://192.168.1.176") {
 		return 0;
-	}else if(location.origin == "http://jlhmsh.vicp.io:5555") {		
-		return 3;
-	} else if(/server=test/i.test(location.search)) { //url后带参数?server=test
+	}else if(location.origin == "http://jlhmsh.vicp.io:5555") {
 		return 1;
-	} else {
+	}else if(location.origin == "http://dl.jlhmsh.com") {
+		if(/server=test/i.test(location.search)) { //url后带参数?server=test
+			return 1;
+		}
 		return 2;
 	}
 	return -1;
 }
 function judgeUrl(server){
-	return ["http://192.168.1.101:8080","http://admin.jlhmsh-test.com/","http://back.jlhmsh.com",'http://jlhmsh.vicp.io:8888'][server];
+	return ['http://192.168.1.101:8080','http://jlhmsh.vicp.io:9999','http://app.jlhmsh.com'][server];
 }
 function judgeUrls(server){
 	//根据当前环境选择对应的接口
@@ -70,10 +71,10 @@ function judgeUrls(server){
 		postJudgeReferee:URL + '/v1.0/insuranceFee/queryReferee',//验证保险专员
 		postCancelOrder:URL + '/v1.0/insuranceFee/cancelOrder',//取消订单
 	};
-	var test = $.extend(true, local, {//测试后台接口
+	var test = $.extend({}, local, {//测试后台接口
 		
 	});
-	var official = $.extend(true, local, {//正式接口
+	var official = $.extend({}, local, {//正式接口
 		
 	});
 	

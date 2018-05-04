@@ -143,7 +143,7 @@
 				judgeReferee= true;
 			}
 
-			if(SERVER === 0 || SERVER === 1 || SERVER === 3) {//如果是本地或测试,显示填充按钮
+			if(SERVER === 0) {//如果是本地或测试,显示填充按钮
 				$('form').before('<a class="btn btn-green" onclick="testVal()">填充表单</a>');
 			}
 			/*获取保险参数*/
@@ -211,30 +211,31 @@
 				//判断
 				var judge = reg.phone.test( _this.val());
 				inputDispoce(_this,judge);
-				if(judge){//满足手机格式
-					if(judgeReferee==false){//且没有进行验证 or 前一次验证不成功
-						ajax({
-							info:'验证保险专员',
-							needLogin:false,
-							infosuccess:true,
-							url:URLS.postJudgeReferee,
-							data:{
-								phone:_this.val()
-							},
-							success:function(data){
-								if(data.data){
-									//如果保险专员有效
-									judgeReferee = true;
-									$refereeId.val(data.data.dmId);								
-									console.log('验证保险专员成功',judgeReferee,$refereeId.val());
-								}
-							}
-						})						
-					}
-				}else{
-					judgeReferee = false;
-					$refereeId.val('');
-				}
+				judgeReferee = judge;
+//				if(judge){//满足手机格式
+//					if(judgeReferee==false){//且没有进行验证 or 前一次验证不成功
+//						ajax({
+//							info:'验证保险专员',
+//							needLogin:false,
+//							infosuccess:true,
+//							url:URLS.postJudgeReferee,
+//							data:{
+//								phone:_this.val()
+//							},
+//							success:function(data){
+//								if(data.data){
+//									//如果保险专员有效
+//									judgeReferee = true;
+//									$refereeId.val(data.data.dmId);								
+//									console.log('验证保险专员成功',judgeReferee,$refereeId.val());
+//								}
+//							}
+//						})						
+//					}
+//				}else{
+//					judgeReferee = false;
+//					$refereeId.val('');
+//				}
 				_this = null;
 			});
 			//被保险人
@@ -293,7 +294,7 @@
 			       		referee:$referee.val(),//保险专员手机号
 			       		refereeId:$refereeId.val(),//保险专员验证ID
 			       		insurant:$policy.val(),//被保险人
-			       		number:parseInt($number.val())||1,//投保份数
+			       		number:( parseInt($number.val())||1 ) + '',//投保份数
 			       		beneficiary:$beneficiary.val(),//保险受益人
 			       		//premium:parseInt($cost.val())||999,//保险费
 			       		date:$date.val(),//生效日期
