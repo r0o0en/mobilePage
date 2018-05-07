@@ -32,8 +32,7 @@
 				<p>个人资料</p>
 			</div>
 			<div class="form-item">
-				<label class="form-item-left" for=""><span class="cl-red">*</span>
-					姓名：</label>
+				<label class="form-item-left" for=""><span class="cl-red">*</span>姓名：</label>
 				<input class="form-item-right" type="text" name="" id="username" tabindex="1" autocomplete="off" required value="" placeholder="中、英文"/>
 			</div>
 			<div class="form-item">
@@ -139,7 +138,7 @@
 				$('#email').val('8150546@qq.com'); //电子邮件
 				$('#job').val('it'); //职业
 				$('#referee').val('15997448183'); //保险专员手机号
-				$('#refereeId').val('2510214861651968'); //保险专员手机号
+				//$('#refereeId').val('2510214861651968'); //保险专员手机号
 				judgeReferee= true;
 			}
 
@@ -150,7 +149,7 @@
 			var insuranceInfo = {};
 			ajax({
 				info:'获取保险详情',
-				infosuccess:true,
+				infosuccess:false,
 				type:"get",
 				url:URLS.getInsuranceInfo,
 				success:function(data){
@@ -292,7 +291,7 @@
 			       		email:$email.val(),//电子邮件
 			       		occupation:$job.val(),//职业
 			       		referee:$referee.val(),//保险专员手机号
-			       		refereeId:$refereeId.val(),//保险专员验证ID
+			       		//refereeId:$refereeId.val(),//保险专员验证ID
 			       		insurant:$policy.val(),//被保险人
 			       		number:( parseInt($number.val())||1 ) + '',//投保份数
 			       		beneficiary:$beneficiary.val(),//保险受益人

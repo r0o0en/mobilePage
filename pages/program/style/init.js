@@ -138,12 +138,13 @@ function delayedToken(){//延长token
 		setToken(Cookies.get('token'));
 	}catch(e){
 		//TODO handle the exception
-		modal('延长 cookie 失败');
+		console.log('延长 cookie 失败');
+//		modal('延长 cookie 失败');
 	}
 	
 }
 function toLoginPage() {//登录过期，2s自动跳转登录页/按钮立即跳转
-	modal('登录过期！');
+//	modal('登录过期！');
 	if(typeof Cookies == 'object' && typeof Cookies.set == 'function'){
 		Cookies.set('token','',{expires:0});		
 	}
@@ -152,7 +153,8 @@ function toLoginPage() {//登录过期，2s自动跳转登录页/按钮立即跳
 	}, 1000);
 }
 function loginPage(){//跳转登录页
-	modal('跳转登录 or 登录命令');
+	console.log('跳转登录 or 登录命令');
+	//modal('跳转登录 or 登录命令');
 	location.href = 'hmclient://toLogin';
 }
 
@@ -217,7 +219,7 @@ function ajax(opt) {
 			if(data.code == 110001 || data.code == 110002) {//重新登录(登录过期):110001 ;用户未登陆:110002;
 				toLoginPage();
 			} else {
-				modal(data.msg ? '提示：'+ data.msg : '请求失败，稍后重试');
+				modal(data.msg ? data.msg : '请求失败，稍后重试');
 			}
 			if(before.errorCallback && before.success instanceof Function ){
 				before.success(data, status, xhr);
