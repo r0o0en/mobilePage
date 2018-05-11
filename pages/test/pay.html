@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html class="html-pay">
+	<head>
+		<meta charset="utf-8" />
+		<title>去支付</title>
+		<meta name="author" content=""/>
+		<meta name="keywords" content="吉粮惠民"/>
+		<meta name="description" content="吉粮惠民,惠吃惠购惠生活。"/>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv= "X-UA-Compatible" content="chrome=1,IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, minimal-ui, viewport-fit=cover">
+		<meta name="telephone=no" content="format-detection">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		
+		<!--<meta name="format-detection" content="telephone=no">
+		<meta http-equiv="x-rim-auto-match" content="none">
+		<meta http-equiv="Pragma" contect="no-cache">-->
+			
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+	</head>
+	<body ontouchstart>
+		<section class="content">
+			<div class="content-card">
+				<form>
+					<div class="form-item">
+						<label class="form-item-left" for="">订单号</label>
+						<input class="form-item-right" type="tel" name="BillNo" tabindex="1" autocomplete="off" required value="" placeholder="商户订单号" disabled/>
+					</div>
+					<div class="form-item">
+						<label class="form-item-left" for="">商&nbsp;&nbsp;&nbsp;品</label>
+						<input class="form-item-right" type="text" name="products" tabindex="2" autocomplete="off" required value="" placeholder="商品信息" disabled/>
+					</div>
+					<div class="form-item">
+						<label class="form-item-left" for="">金&nbsp;&nbsp;&nbsp;额</label>
+						<input class="form-item-right" type="tel" name="Amount" tabindex="3" autocomplete="off" required value="" placeholder="金额" disabled/>
+					</div>
+					<div class="form-item">
+						<label class="form-item-left" for="">支付行</label>
+						<div class="form-item-right select-item">
+							<header class="select-header">
+								测试随声附和送给大家高的人可搞基					
+							</header>
+							<ul class="select-body">
+								<li><img src="zh.png"/>中国银行</li>
+								<li><img src="zh.png"/>人民银行</li>
+								<li><img src="zh.png"/>天地银行</li>
+							</ul>
+							<input type="hidden" name="PaymentType" value="" />
+						</div>
+					</div>
+					<!--<div class="form-item">
+						<label class="form-item-left" for="">支付行</label>
+						<select class="form-item-right" name="PaymentType">
+							<option value=""><img src="zh.png"/>中国银行</option>
+							<option value=""><img src="zh.png"/>人民银行</option>
+							<option value=""><img src="zh.png"/>天地银行</option>
+						</select>
+					</div>-->
+					<div class="form-item">
+						<label class="form-item-left" for="">类&nbsp;&nbsp;&nbsp;型</label>
+						<div class="form-item-right">
+							<div class="radio">
+								<span class="radio-input">
+									<input type="radio" name="PayType" id="PayType_1" tabindex="5" required value="1" checked/>
+									<i></i>
+								</span>
+								<label for="PayType_1">个人</label>
+							</div>
+							<div class="radio">
+								<span class="radio-input">
+									<input type="radio" name="PayType" id="PayType_2" tabindex="5" required value="2"/>
+									<i></i>
+								</span>
+								<label for="PayType_2">企业</label>
+							</div>
+						</div>
+					</div>
+					
+					<div class="margin-top-bottom padding-top">
+						<button class="btn btn-all btn-radius btn-lg btn-red btn-submit">去支付</button>
+					</div>
+				</form>
+			</div>
+		</section>
+		<script src="zepto.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			/*
+			 * 获取+解析 location.search 参数
+			 * 
+			 * */
+			function getUrlData(urls) { //获取参数
+				var url = typeof urls == 'string' ? urls : location.search ; //获取url中"?"符后的字串
+				var theRequest = new Object();
+				if(url.indexOf("?") != -1) {
+					var str = url.substr(1);
+					strs = str.split("&");
+					for(var i = 0; i < strs.length; i++) {
+						if(strs[i].length == 0) {
+							continue;
+						}
+						theRequest[strs[i].split("=")[0]] = decodeURI(strs[i].split("=")[1]);
+					}
+				}
+				return theRequest;
+			}
+			;$(function () {
+				$('.select-item').each(function (i,e) {
+					var _this = $(e);
+					var $h = _this.children('.select-header');
+					var $b = _this.children('.select-body');
+					var $i = _this.children('input');
+					var val = $i.val();
+					var judge = false;
+					if(val){
+						$b.children('li').each(function(j,v){
+							var liv = $(v).attr('value')|| $(v).text() ;
+							if( liv == val ){
+								$(v).addClass('active');
+								$h.text(liv);
+								judge = true;
+								return false;
+							}
+						})
+						
+					}
+					if(judge){
+						return true;
+					}else{
+						var  liv = $b.children('li').eq(0);
+						liv = liv.attr('value')||liv.text();
+						$h.text(liv);
+						$i.val(liv);
+					}
+					
+				})
+				$('.select-header').on('click',function (e) {
+					var _this = $(this);
+					if(_this.hasClass('active')){
+						_this.removeClass('active');
+					}else{
+						_this.addClass('active');
+					}
+				})
+				$('.select-body').on('click','li',function (e) {
+					var _this = $(this);
+					var val = _this.attr('value')||_this.text();
+					_this.addClass('active').siblings().removeClass('active');
+					_this.parent()
+						.siblings('input').val( val )
+						.siblings('.select-header').text(val).removeClass('active');
+				});
+			});
+		</script>
+	</body>
+</html>

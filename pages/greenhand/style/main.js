@@ -44,7 +44,7 @@ $(function () {
 	var url_judgeUser = function() {
 		if( islocally || istest) {
 //			alert('（测试）请求接口：' + 'http://test.hmsh.com/v1.0/activity/receiveStamps');
-			return 'http://test.hmsh.com/v1.0/activity/receiveStamps';
+			return 'http://test.jlhmsh-test.com/v1.0/activity/receiveStamps';
 		}else{
 			return 'http://app.jlhmsh.com/v1.0/activity/receiveStamps';
 		}

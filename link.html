@@ -59,9 +59,26 @@
 				-moz-border-radius: 4px;
 				border-radius: 4px;
 			}
+			textarea{
+				display: block;
+				border: 1px solid #3399FF;
+				width: 100%;
+				border-radius: 4px;
+				padding: 10px;
+			}
+			textarea + a{
+				display: block;
+				margin: 10px auto;	
+				text-align: center;
+			}
 		</style>
 	</head>
 	<body>
+		<section>
+			<textarea type="" name="testlink" id="testlink" value="" placeholder="跳转链接地址，需要http://" />http://192.168.1.176/share/goods.html</textarea>
+			<a onclick="testPage()">跳转</a>
+			<a href="https://item.m.jd.com/product/26262811230.html?jd_pop=2a5a17ac-ae78-4589-93a5-feccb6eb3989&abt=0">分享参考</a>
+		</section>
 		<section>
 			<header><h1>原link页面 </h1></header>
 			<a href='link2.html'>link2.html</a>
@@ -108,8 +125,11 @@
 			<h3>新手引导<small>(/pages/greenhand/noob.html)</small></h3>
 			<a href="pages/greenhand/noob.html">新手引导页</a>
 			<a href="http://dl.jlhmsh.com/mobilePage/pages/greenhand/noob.html">新手引导页(dl.jlhmsh.com)</a>
+			<hr />
+			<h3>5月活动H5页<small>(/pages/discounts/)</small></h3>
+			<a href="pages/discounts/index.html">优惠</a>
+			<a href="http://dl.jlhmsh.com/mobilePage/pages/discounts/index.html">优惠(dl.jlhmsh.com)</a>
 		</section>
-		
 		
 		<section>
 			<header><h1>demo页<small>(demo/judgeBrowser/)</small> </h1></header>
@@ -121,6 +141,13 @@
 		<script src="public/js/init.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			console.log(browser);
+			function testPage(id) {
+				var links = document.getElementById('testlink').value;
+				console.log(links);
+				if(links){
+					location.href = links;
+				}
+			}
 		</script>
 	</body>
 </html>
