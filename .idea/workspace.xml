@@ -1,9 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a2f5fa1e-caed-4131-9fdc-39b21280b5b4" name="Default" comment="1、新手引导页 “去注册”跳转链接修正&#10;2、保险首页前往“去报名”判断url token外，新增判断 cookie中的token">
+    <list default="true" id="a2f5fa1e-caed-4131-9fdc-39b21280b5b4" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/link.html" afterPath="$PROJECT_DIR$/link.html" />
+      <change beforePath="$PROJECT_DIR$/pages/buyHouse/img/banner.jpg" afterPath="$PROJECT_DIR$/pages/buyHouse/img/banner.jpg" />
+      <change beforePath="$PROJECT_DIR$/pages/buyHouse/img/footer.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/pages/buyHouse/img/ico-radio.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/pages/buyHouse/img/kq_log.gif" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/pages/buyHouse/img/person01.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/pages/buyHouse/img/person02.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/pages/buyHouse/img/zfb.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/pages/buyHouse/index.html" afterPath="$PROJECT_DIR$/pages/buyHouse/index.html" />
+      <change beforePath="$PROJECT_DIR$/pages/discounts/img/bg.jpg" afterPath="$PROJECT_DIR$/pages/discounts/img/bg.jpg" />
+      <change beforePath="$PROJECT_DIR$/pages/discounts/index.html" afterPath="$PROJECT_DIR$/pages/discounts/index.html" />
+      <change beforePath="$PROJECT_DIR$/pages/greenhand-discard/img/bg_3c.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/pages/greenhand-discard/img/bg_both11.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/pages/greenhand-discard/img/bg_cate.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/pages/greenhand-discard/img/bg_gold.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/pages/greenhand-discard/img/bg_gold_bg2.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/pages/greenhand-discard/img/bg_goods.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/pages/greenhand-discard/img/bg_half_price_car.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/pages/greenhand-discard/img/bg_half_price_car_bg.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/pages/greenhand-discard/img/bg_half_price_car_bg2.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/pages/greenhand-discard/img/bg_hotel.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/pages/greenhand-discard/img/bg_pay_car.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/pages/greenhand-discard/img/home-bg.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/pages/greenhand-discard/img/home-bg1.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/pages/greenhand-discard/img/home-claasify01.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/pages/greenhand-discard/img/home-claasify02.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/pages/greenhand-discard/img/home-claasify03.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/pages/greenhand-discard/img/home-claasify04.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/pages/greenhand-discard/img/home-title.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/pages/greenhand-discard/img/noob-bg-bottom.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/pages/greenhand-discard/img/noob-bg-top.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/pages/greenhand-discard/img/noob-goods-icon01.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/pages/greenhand-discard/img/noob-goods-icon02.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/pages/greenhand-discard/img/noob-goods01.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/pages/greenhand-discard/img/noob-goods02.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/pages/greenhand-discard/img/success-bg01.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/pages/greenhand-discard/img/success-bg02.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/pages/greenhand-discard/img/wutai.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/pages/greenhand-discard/index.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/pages/greenhand-discard/index_3C.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/pages/greenhand-discard/index_both11.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/pages/greenhand-discard/index_cate.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/pages/greenhand-discard/index_gold.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/pages/greenhand-discard/index_goods.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/pages/greenhand-discard/index_half_price_car.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/pages/greenhand-discard/index_hotel.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/pages/greenhand-discard/index_pay_car.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/pages/greenhand-discard/main.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/pages/greenhand-discard/noob.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/pages/greenhand-discard/style.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/pages/greenhand-discard/style.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/pages/greenhand-discard/test.json" afterPath="" />
       <change beforePath="$PROJECT_DIR$/pages/greenhand/style/main.js" afterPath="$PROJECT_DIR$/pages/greenhand/style/main.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -175,7 +225,8 @@
       <workItem from="1525486986665" duration="824000" />
       <workItem from="1525658608837" duration="2485000" />
       <workItem from="1525744780310" duration="844000" />
-      <workItem from="1526005360967" duration="107000" />
+      <workItem from="1526005360967" duration="758000" />
+      <workItem from="1526033234032" duration="796000" />
     </task>
     <task id="LOCAL-00001" summary="iphoneX样式修复：viewport-fit解决iphoneX的“刘海”问题（全局搜索替换，部分没有替换到）">
       <created>1521622275262</created>
@@ -324,11 +375,18 @@
       <option name="project" value="LOCAL" />
       <updated>1525745092473</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="5月惠民季">
+      <created>1526005492563</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1526005492563</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48222000" />
+    <option name="totallyTimeSpent" value="49669000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -344,6 +402,7 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11064278" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38411316" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -353,7 +412,6 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -436,7 +494,8 @@
     <MESSAGE value="1、保险表单推荐人手机号→不进行接口验证&#10;2、其他微调" />
     <MESSAGE value="1、手机正则修改&#10;2、保险表单提示关闭" />
     <MESSAGE value="1、新手引导页 “去注册”跳转链接修正&#10;2、保险首页前往“去报名”判断url token外，新增判断 cookie中的token" />
-    <option name="LAST_COMMIT_MESSAGE" value="1、新手引导页 “去注册”跳转链接修正&#10;2、保险首页前往“去报名”判断url token外，新增判断 cookie中的token" />
+    <MESSAGE value="5月惠民季" />
+    <option name="LAST_COMMIT_MESSAGE" value="5月惠民季" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -447,7 +506,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -705,7 +763,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="141">
           <caret line="30" column="34" lean-forward="true" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>

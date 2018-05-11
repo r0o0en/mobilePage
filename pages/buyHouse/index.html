@@ -24,7 +24,7 @@
 				font-size: 14px;				
 			}
 			html{
-				background-color: #32374a;
+				background-color: white;
 				min-height: 100%;
 			}
 			.banner-img{
@@ -33,88 +33,312 @@
 			.footer-img{
 				min-height: 1.9rem;
 			}
+			.bg-blue{
+				background-color: #269d86;
+			}
+			.bg-yello{
+				background-color: #e5a537;
+			}
+			.color-white{
+				color: white;
+			}
+			.color-yello{
+				color: #e5a537;
+			}
+			.color-red{
+				color: #c31a13;
+			}
+			.text-indent{
+				text-indent: 28px;;
+			}
 			.section{
-				margin: 0.4rem;
-				background-color: white;
-				padding: 15px;
+				color: white;
+				overflow: hidden;
+				background-repeat: no-repeat;
+				background-size: 100% auto;
+				background-position: top center;
+			}
+			.section-padding-left-right{
+				padding: 0px 5%;
+			}
+			.section-padding-bottom{
+				padding-bottom: 30px;
 			}
 			.section header {
-				margin-bottom: 10px;
+				padding: 20px 0;
 			}
 			.section header h2{
-				display: inline-block;
-				padding: 10px;
-				background-color: #119cac;
-				color: white;
+				text-align: center;
 				margin: 0 auto;
-				font-size: 16px;
+				font-size: 18px;
 			}
-			.section p{
-				text-indent: 24px;
-			}
-			ul{
-				list-style-type: decimal;
-				list-style-position: inside;
-			}
-			.right-image{
-				background-position: right bottom;
-				background-size: auto 100%;
+			/*头部背景*/
+			.section{position: relative;}
+			.section>*{position: relative;z-index: 1;}
+			.section .bg{
+				position: absolute;z-index: 0;display: block;top: 0;left: 0;right: 0;bottom: 0;
 				background-repeat: no-repeat;
+				background-size: 100% auto;
+				background-position: bottom center;
 			}
-			.footer-p{
-				color: white;
-			    padding: 0 0.4rem;
-			    text-align: center;
-			    margin: 0 auto -20px;
-			    position: relative;
-			    z-index: 1;
+			/*玩转*/
+			.border-dashed{
+				border: 2px dashed white;
+			}
+			.radius{
+				-webkit-border-radius: 4px;
+				-moz-border-radius: 4px;
+				border-radius: 4px;
+			}
+			.padding{
+				padding: 20px;
+			}
+			.padding-left-right{
+				padding-left: 20px;
+				padding-right: 20px;
+			}
+			.padding-top-bottom{
+				padding-top: 20px;
+				padding-bottom: 20px;
+			}
+			/*四大福利*/
+			.four-welfare{
+				display: flex;
+				display: -webkit-box;
+				display: -moz-box;
+				display: -ms-flexbox;
+				display: -webkit-flex;
+				/*溢出换行*/
+				-webkit-flex-wrap:wrap;
+				flex-direction:wrap;
+				/*均匀分布*/
+				-webkit-justify-content:space-between;
+				justify-content:space-between;
+			}
+			.four-welfare>*{
+				-webkit-flex: 1 ;
+				flex:  1 ;
+				padding: 10px;
+				min-width: 46%;
+				max-width: 46%;
+				margin-bottom: 20px;
+				-webkit-border-bottom-left-radius: 20px;
+				-moz-border-bottom-left-radius: 20px;
+				border-bottom-left-radius: 20px;
+				-webkit-border-bottom-right-radius: 20px;
+				-moz-border-bottom-right-radius: 20px;
+				border-bottom-right-radius: 20px;
+			}
+			@media only screen and (min-width: 640px) {
+				.four-welfare>*{
+					min-width: 22%;
+					max-width: 22%;
+					
+				}
+			}
+			.four-welfare small{
+				display: block;
+				color: #e7233b;
+			}
+			/*五大*/
+			.five-policy{
+				display: flex;
+				display: -webkit-box;
+				display: -moz-box;
+				display: -ms-flexbox;
+				display: -webkit-flex;
+				/*溢出换行*/
+				/*-webkit-flex-wrap:wrap;
+				flex-direction:wrap;*/
+				-webkit-flex-wrap:wrap;
+				flex-wrap:wrap;
+				/*均匀分布*/
+				-webkit-justify-content:space-between;
+				justify-content:space-between;
+			}
+			.five-policy>*{
+				-webkit-flex: 1 ;
+				flex:  1 ;
+				padding: 10px;
+				min-width: 46%;
+				max-width: 46%;
+				margin-bottom: 20px;
+			}
+			.five-policy .color-red{
+				font-size: 15px;
+			}
+			@media only screen and (min-width: 640px) {
+				.five-policy>*{
+					min-width: 30%;
+					max-width: 30%;
+				}
+			}
+			.flex{
+				display: flex;
+				display: -webkit-box;
+				display: -moz-box;
+				display: -ms-flexbox;
+				display: -webkit-flex;
+				/*溢出换行*/
+			}
+			.flex-1{
+				-webkit-flex: 1 ;
+				flex:  1 ;
+			}
+			.flex-align-items-center{
+				-webkit-align-items:center;
+				align-items:center;
+			}
+			/*参与*/
+			.participation{
+				text-align: center;
+			}
+			.participation img,
+			.participation span{
+				display: inline-block;
+				vertical-align: middle;	
+				margin-bottom: 20px;		
+			}
+			.participation span{
+				padding: 10px;
+				-webkit-border-radius: 50%;
+				-moz-border-radius: 50%;
+				border-radius: 50%;
+				min-width: 60px;
+			}
+			.participation img{
+				margin-left: 6px;
+				margin-right: 6px;
 			}
 		</style>
 	</head>
 	<body>
 		<img src="img/banner.jpg" class="img-all main-bg banner-img"/>
-		<section class="section">
-			<header>
-				<h2>规则描述</h2>
+		<section class="section bg-blue" style="background-image: url(img/01/header.png);">
+			<span class="bg" style="background-image: url(img/01/footer.png);"></span>
+			<header class="color-yello">
+				<h2>项目介绍</h2>
 			</header>
-			<p>上吉粮惠民APP平台购房，即可获30%-100%的购房补贴，补贴将以“粮票”的形式返还到你的账户中。</p>
-			<p>例：房子全款为70万，通过吉粮惠民平台购买，只需要支付三成首付：21万元，购买成功后吉粮惠民立即补贴70万粮票。粮票每天按1‰提现，即70万×1‰×30天/月＝21000元/月。如果贷款49万30年还清，则月供约2600元/月。拿上吉粮惠民补贴，轻轻松松还月供。</p>
+			<div class="section-padding-left-right section-padding-bottom">
+				<p class="text-indent">惠有房是吉粮惠民旗下的住房项目，惠有房项目在全国房价持续上涨的大环境下，让吉粮的会员轻松购房。同时，公司与茅台集团达成战略合作，让吉粮会员免费喝茅台，团购住房，实现“人人喝茅台，人人有房产”的宏伟目标。</p>
+				<p class="text-indent">以2.5万元/单（可买多单）购买茅台酒，可获得拼房的资格（房产由公司在全国范围内对接）公司采用全国一条线排号的模式，进八出一，每单出彩可获得落地价值20万以内房产1套，房产金额可叠加。会员购酒后，次月起每单每月28号赠送价值1万的消费卡或者2100元现金卡，最高12个月，直到出彩为止。自入单之日起满12个月未出彩的，次月起每单每月28号赠送价值5000元消费卡或1000元现金卡，最高6个月，直到出彩为止。</p>				
+			</div>
 		</section>
-		<section class="section">
-			<header>
-				<h2>所需资料</h2>
-			</header>
-			<ul class="right-image" style="background-image: url(img/person02.jpg);">
-				<li>身份证</li>
-				<li>征信报告</li>
-				<li>银行一年流水</li>
-				<li>结婚证</li>
-				<li>户口本</li>
-				<br />
-				<br />
-				<br />
-			</ul>
-		</section>
-		<section class="section">
-			<header>
-				<h2>参与流程</h2>
-			</header>
-			<ul class="right-image" style="background-image: url(img/person01.jpg);">
-				<li>提供资质证明</li>
-				<li>提交申请表</li>
-				<li>选择房子</li>
-				<li>办理房贷</li>
-				<li>交纳5%-30%首付</li>
-				<li>购房款全额返还</li>
-				<li>每日可提取1‰</li>
-				<li>售后服务流程</li>
-			</ul>
-		</section>
-		<p class="footer-p">详情请咨询热线：400-1180-852</p>
-		<img src="img/footer.jpg" class="img-all main-bg footer-img"/>
 		
-		<script src="../../public/js/init.js" type="text/javascript" charset="utf-8"></script>
-		<script type="text/javascript">
-		</script>
+		<section class="section bg-yello" >
+			<span class="bg" style="background-image: url(img/02/footer.png);"></span>
+			<header class="">
+				<h2>玩转惠有房</h2>
+			</header>
+			<div class="section-padding-left-right section-padding-bottom">
+				<div class="border-dashed radius padding" >
+					举例：想得到一套价值300万的房产，300万÷20万/套=15单，则客户仅需购买茅台<br />
+					酒：2.5万/单×15单=37.5万，可获得：<br />
+					1、45箱茅台酒，每箱6瓶，每瓶价值1398元<br />
+					2、次月起每月28号补贴2100元/单×15单=31500元/月，最高12个月<br />
+					3、超过12个月未出局再补贴1000元/单×15单=15000元/月，最高6个月<br />
+					4、出局拿价值300万房产，房源客户指定或公司提供<br />
+					房产公司支付首付、中介费（税费由客户自理）和补贴5年月供。5年后，房产可由<br />
+					公司按市场价回收，或者个人承担剩余月供<br />
+				</div>
+			</div>
+		</section>
+		
+		<section class="section bg-blue" style="background-image: url(img/03/header.png);">
+			<header class="">
+				<h2>惠有房四大福利</h2>
+			</header>
+			<div class="section-padding-left-right section-padding-bottom">
+				<!--<img class="img img-all" src="img/03/text.png"/>-->
+				<div class="four-welfare">
+					
+					<div class="border-dashed radius ">
+						<p>1、购酒次月起，享受每单每月28号赠送价值1万元消费卡或者补贴2100元现金卡，最高12个月，直到排号出彩</p>
+					</div>
+					<div class="border-dashed radius ">
+						<p>2、出彩可选择相应价值房产，房产公司支付首付、中介费（税费由客户自理）和补贴5年月供。5年后，房产可由公司按市场价回收，或者个人承担剩余月供</p>
+					</div>
+					<div class="border-dashed radius ">
+						<p>3、购酒满8个月未出彩四选一<br />①直推8倍业绩出局<br />②获得3倍价值的产品<br />③获得1.6倍粮票<br />④增加50%产品款获<br />得相应价值的房产</p>
+						<small class="color-red">备注：选择以上四选一方案后，默认为已出彩</small>
+					</div>
+					<div class="border-dashed radius ">
+						<p>4、购酒满12个月未出彩二选一<br />
+							①每单每月28号赠送价值5000元消费卡最高6个月<br />
+							②每单每月28号补贴1000元现金卡最高6个月</p>
+						<small class="color-red">备注：选择以上二选一方案后，满6个月则默认为已出彩未满6个月出彩则继续享受出彩政策</small>
+					</div>
+					
+				</div>
+			</div>
+			<img class="img img-all" src="img/03/footer.jpg"/>
+		</section>
+		
+		<section class="section bg-yello" style="background-image: url(img/04/header.png);">
+			<header class="">
+				<h2>惠有房五大市场政策</h2>
+			</header>
+			<div class="section-padding-left-right section-padding-bottom">
+				<div class="five-policy">
+					<div class="border-dashed radius flex flex-align-items-center">
+						<p class="color-red">1.分享奖励5%提成</p>
+					</div>
+					<div class="border-dashed radius ">
+						<p class="color-red">2.直推10万业绩送2.5万粮票</p>
+						<p>分享奖励：10万x5%=5000元粮票奖励：2.5万粮票</p>
+					</div>
+					<div class="border-dashed radius ">
+						<p class="color-red">3.升级为服务商，业绩提成8%</p>
+						<p>服务商收益：①送等值茅台酒<br />②再送等值粮票<br />③直推业绩提成8%<br />④推荐服务商或运营商享受20%提成</p>
+					</div>
+					<div class="border-dashed radius ">
+						<p class="color-red">4.升级为运营商，业绩提成12%</p>
+						<p>
+							运营商收益：
+							①送等值茅台酒<br />
+							②再送等值粮票<br />
+							③直推业绩提成12%<br />
+							④推荐服务商或运营商享受30%提成
+						</p>
+					</div>
+					<div class="border-dashed radius ">
+						<p class="color-red">5.业绩达标再送豪车</p>
+						<p>
+							①业绩达到1000万 ，奖励路虎极光汽车一台<br />
+							②业绩达到2600万，奖励玛莎拉蒂吉博力汽车一台<br />
+							③业绩达到3800万，奖励保时捷帕拉梅拉汽车一台
+						</p>
+					</div>
+					<div class="border-dashed radius ">
+						<!--占位-->
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		<section class="section bg-blue" style="background-image: url(img/05/header.png);">
+			<header class="">
+				<h2>参与方式</h2>
+			</header>
+			<div class="section-padding-left-right">
+				<img class="img img-all" src="img/05/text.png"/>
+				<!--<div class="participation">
+					<span class="border-dashed radius ">付款</span>
+					<img src="img/05/ico-right.png"/>
+					<span class="border-dashed radius ">全国排号</span>
+					<img src="img/05/ico-right.png"/>
+					<span class="border-dashed radius ">获得交房资格</span>
+					<img src="img/05/ico-right.png"/>
+					<span class="border-dashed radius ">通知选房</span>
+					<img src="img/05/ico-right.png"/>
+					<span class="border-dashed radius ">提交资料</span>
+					<img src="img/05/ico-right.png"/>
+					<span class="border-dashed radius ">办理手续</span>
+					<img src="img/05/ico-right.png"/>
+					<span class="border-dashed radius ">交房</span>
+				</div>-->
+			</div>
+			<img class="img img-all" src="img/05/footer.jpg"/>
+		</section>
 	</body>
 </html>
